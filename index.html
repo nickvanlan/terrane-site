@@ -5,488 +5,492 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Terrane Geomatics</title>
-<meta name="description" content="Terrane Geomatics, Inc. — reality capture, precision layout, deformation monitoring, tunnel surveys, boundary and ALTA surveys, and high-country control from the Sierra Nevada.">
+<meta name="description" content="Terrane Geomatics, Inc.: drone and laser scanning, precision layout, deformation monitoring, tunnel surveys, boundary and ALTA surveys, and high-country control. Licensed land surveyors at Yosemite's South Entrance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --granite:#0d1114;
-  --granite-2:#151b20;
-  --granite-3:#1e262d;
-  --line:#2a343c;
-  --bone:#ece6da;
-  --bone-dim:#a9a69e;
-  --mute:#6f7a80;
-  --signal:#ff6a2b;
-  --lichen:#c7d36f;
-  --paper:#f3efe6;
-  --ink:#141a1f;
-  --wide:"Archivo",system-ui,sans-serif;
+  --navy:#0F1E36; --navy-2:#14294B; --navy-line:#23385C; --navy-line-2:#2C436B;
+  --gold:#C9A04E; --gold-hi:#E2BE73;
+  --paper:#F3F2EE; --white:#FFFFFF; --rule:#DCDFE5; --rule-2:#C9CFD9;
+  --ink:#0F1E36; --ink-2:#3B4A63; --steel:#4A6290; --mist:#C7CFDC; --mist-2:#9FB0C9;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
-  --gutter:clamp(16px,4vw,56px);
-  --max:1240px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--granite);color:var(--bone);font-family:var(--wide);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit}
-img,svg,canvas{display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.kicker{color:var(--signal)}
-.kicker::before{content:"";display:inline-block;width:8px;height:8px;border:1.5px solid currentColor;transform:rotate(45deg);margin-right:12px;vertical-align:1px}
-h1,h2,h3{font-weight:700;margin:0;line-height:1.02;font-stretch:112%}
-h2{font-size:clamp(34px,5.2vw,64px);letter-spacing:-.02em}
-h3{font-size:22px;font-stretch:105%;letter-spacing:-.005em;line-height:1.15}
-p{margin:0}
-
-/* ---------- header ---------- */
-header.site{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
-header.site.solid{background:rgba(13,17,20,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
-.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
-.brand svg{width:30px;height:30px}
-.brand b{font-weight:800;font-stretch:125%;letter-spacing:.16em;font-size:19px}
-.brand span{color:var(--bone-dim);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-left:1px solid var(--line);padding-left:14px}
-nav.main{display:flex;gap:34px;align-items:center}
-nav.main a{text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);transition:color .2s}
-nav.main a:hover{color:var(--bone)}
-nav.main a.cta{color:var(--granite);background:var(--signal);padding:10px 16px}
-nav.main a.cta:hover{color:var(--granite);background:#ff834f}
-@media (max-width:900px){nav.main a:not(.cta){display:none}.brand span{display:none}}
-
-/* ---------- hero ---------- */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:120px}
-#terrain{position:absolute;inset:0;width:100%;height:100%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,.55) 0%,rgba(13,17,20,0) 22%,rgba(13,17,20,0) 60%,rgba(13,17,20,.85) 90%,var(--granite) 100%);pointer-events:none}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(40px,8vh,88px)}
-.hero h1{font-size:clamp(46px,8.6vw,124px);letter-spacing:-.035em;font-stretch:118%;max-width:12ch}
-.hero h1 em{font-style:normal;color:var(--signal)}
-.hero-sub{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:36px}
-.hero-sub p{font-size:clamp(17px,1.6vw,20px);color:#d8d3c8;max-width:46ch;text-shadow:0 0 18px #0d1114,0 0 6px #0d1114}
-.readout{justify-self:end;border:1px solid var(--line);background:rgba(13,17,20,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:16px 18px;min-width:260px}
-.readout div{display:flex;justify-content:space-between;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;padding:3px 0;color:var(--bone-dim)}
-.readout div b{font-weight:500;color:var(--bone)}
-.readout .live{color:var(--lichen)}
-.readout .live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lichen);margin-right:8px;vertical-align:1px;animation:pulse 1.6s infinite}
-@keyframes pulse{50%{opacity:.25}}
-.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:16px 22px;border:1px solid var(--bone);transition:background .2s,color .2s,border-color .2s}
-.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--granite)}
-.btn.primary:hover{background:#ff834f;border-color:#ff834f}
-.btn.ghost:hover{background:var(--bone);color:var(--granite)}
-.btn svg{width:16px;height:16px}
-@media (max-width:780px){.hero-sub{grid-template-columns:1fr;gap:28px}.readout{justify-self:stretch;min-width:0}}
-
-/* ---------- capability ticker ---------- */
-.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--granite)}
-.ticker-track{display:flex;gap:56px;padding:18px 0;white-space:nowrap;width:max-content;animation:tick 48s linear infinite}
-.ticker-track span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim)}
-.ticker-track span::after{content:"+";color:var(--signal);margin-left:56px}
-@keyframes tick{to{transform:translateX(-50%)}}
-
-/* ---------- sections ---------- */
+body{margin:0;font-family:Archivo,"Helvetica Neue",sans-serif;color:var(--ink);background:var(--navy);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--gold)} a:hover{color:var(--gold-hi)}
+.w{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.cond{font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:.95}
+h1,h2,h3,p{margin:0}
+.h2{font-size:64px}
+.btn{text-decoration:none;font-size:15px;font-weight:700;font-stretch:88%;letter-spacing:.12em;text-transform:uppercase;padding:0 26px;min-height:54px;display:inline-flex;align-items:center;gap:10px}
+.btn-gold{background:var(--gold);color:var(--navy)} .btn-gold:hover{background:var(--gold-hi);color:var(--navy)}
+.btn-line{border:1.5px solid var(--paper);color:var(--paper)} .btn-line:hover{background:var(--paper);color:var(--navy)}
 section{position:relative}
-.pad{padding:clamp(80px,12vw,150px) 0}
-.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:clamp(44px,6vw,72px)}
-.sec-head p{color:var(--bone-dim);max-width:48ch;justify-self:end}
-.sec-head .mono{display:block;margin-bottom:22px}
-@media (max-width:820px){.sec-head{grid-template-columns:1fr}.sec-head p{justify-self:start}}
+.pad{padding-top:104px;padding-bottom:104px}
+
+/* header */
+header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--paper)}
+.brand:hover{color:var(--paper)}
+.brand svg{width:44px;height:44px;flex:none}
+.brand .name{display:flex;flex-direction:column;line-height:1}
+.brand b{font-size:27px;font-weight:800;font-stretch:72%;letter-spacing:.2em}
+.brand small{font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-top:5px}
+.nav{display:flex;gap:30px;align-items:center;font-size:14px;font-weight:600;font-stretch:88%;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--mist);text-decoration:none} .nav a:hover{color:var(--paper)}
+.bar-r{display:flex;align-items:center;gap:20px}
+.phone{color:var(--paper);text-decoration:none;font-family:var(--mono);font-size:14px;font-weight:500}
+.quote{background:var(--gold);color:var(--navy);text-decoration:none;font-size:14px;font-weight:700;font-stretch:88%;letter-spacing:.12em;text-transform:uppercase;padding:0 20px;min-height:46px;display:inline-flex;align-items:center}
+.quote:hover{background:var(--gold-hi);color:var(--navy)}
+
+/* hero */
+.hero{min-height:780px;color:var(--paper);display:flex;align-items:flex-end;overflow:hidden}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,40,.45) 0%,rgba(11,22,40,.55) 55%,rgba(11,22,40,.82) 100%)}
+.hero .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,160,78,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,78,.10) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 70%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 70%,transparent 100%)}
+.hero .sweep{position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);box-shadow:0 0 18px 4px rgba(201,160,78,.55);opacity:.85;animation:sweep 7s cubic-bezier(.45,0,.55,1) infinite}
+.hero .sweep::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:120px;background:linear-gradient(0deg,rgba(201,160,78,.16),transparent)}
+@keyframes sweep{0%{transform:translateY(-130px)}100%{transform:translateY(900px)}}
+.hero .in{position:relative;width:100%;padding-top:120px;padding-bottom:72px;display:flex;flex-direction:column;gap:28px}
+.hero .kick{color:#D6DDE8}
+.hero h1{font-size:112px;max-width:980px;font-weight:800;font-stretch:72%;line-height:.9;text-transform:uppercase}
+.hero h1 span{color:var(--gold)}
+.hero p.lead{font-size:21px;line-height:1.55;color:#E3E7EE;max-width:660px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
+.hero .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.readout{font-family:var(--mono);font-size:12px;color:var(--mist);border:1px solid rgba(201,160,78,.45);background:rgba(11,22,40,.55);padding:12px 16px;display:grid;grid-template-columns:auto auto;gap:4px 22px}
+.readout b{font-weight:500;color:var(--paper);text-align:right}
+.readout .on{color:var(--gold)}
+.readout .on::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:1px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+.cap{font-family:var(--mono);font-size:12px;color:var(--mist);max-width:320px;text-align:right}
+
+/* stats */
+.stats{background:var(--navy-2);color:var(--paper);border-bottom:1px solid var(--navy-line)}
+.stats .w{padding-top:44px;padding-bottom:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:32px}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat b{font-size:52px;font-weight:800;font-stretch:72%;line-height:1;color:var(--gold)}
+.stat span{font-size:15px;line-height:1.45;color:var(--mist)}
 
 /* services */
-.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.svc{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 30px 38px;position:relative;transition:background .25s;min-height:330px;display:flex;flex-direction:column}
-.svc:hover{background:var(--granite-2)}
-.svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--mute);display:flex;justify-content:space-between}
-.svc .num i{font-style:normal;color:var(--signal);opacity:0;transition:opacity .25s}
-.svc:hover .num i{opacity:1}
-.svc .ico{width:46px;height:46px;margin:30px 0 26px;color:var(--bone)}
-.svc p{color:var(--bone-dim);font-size:15.5px;margin-top:14px}
-.svc ul{list-style:none;padding:0;margin:auto 0 0;padding-top:22px;display:flex;flex-wrap:wrap;gap:6px}
-.svc li{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);border:1px solid var(--line);padding:4px 8px}
-@media (max-width:980px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.services{grid-template-columns:1fr}.svc{min-height:0}}
+.svc-sec{background:var(--paper)}
+.head{display:flex;flex-direction:column;gap:16px;max-width:860px;margin-bottom:52px}
+.head .mono{color:var(--steel)}
+.head p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.svc{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.svc img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.svc .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.svc .tag{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;justify-content:space-between;gap:12px}
+.svc .tag em{font-style:normal;color:#8A6A24}
+.svc h3{font-size:30px;font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:1}
+.svc p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.svc .spec{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+.svc.new .tag::after{content:"Expanded";color:var(--navy);background:var(--gold);padding:1px 7px;font-size:10.5px;letter-spacing:.12em}
+@media (max-width:980px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.svcs{grid-template-columns:1fr}}
 
-/* high country */
-.high{background:var(--paper);color:var(--ink);overflow:hidden}
-.high .mono.kicker{color:#d4501a}
-.high-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(40px,6vw,90px);align-items:center}
-.high h2{color:var(--ink)}
-.high p.lead{font-size:clamp(18px,1.7vw,21px);color:#3a4248;margin-top:28px;max-width:44ch}
-.high-list{margin-top:36px;display:grid;gap:0;border-top:1px solid #d6cfc0}
-.high-list div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #d6cfc0;font-size:15.5px;color:#3a4248}
-.high-list b{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding-top:3px}
-.contour-card{position:relative;aspect-ratio:4/5;background:#e6e0d3;border:1px solid #d6cfc0}
-.contour-card svg{position:absolute;inset:0;width:100%;height:100%}
-.contour-card .tag{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink);background:var(--paper);border:1px solid #cdc5b4;padding:6px 9px}
-@media (max-width:860px){.high-grid{grid-template-columns:1fr}.contour-card{aspect-ratio:1/1}.high-list div{grid-template-columns:1fr;gap:4px}}
+/* tech */
+.tech{background:var(--navy);color:var(--paper)}
+.tech .w{display:flex;flex-wrap:wrap;gap:64px;align-items:center}
+.tech .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.tech .txt .mono{color:var(--mist-2)}
+.tech h2 span{color:var(--gold)}
+.tech p.lead{font-size:19px;line-height:1.6;color:var(--mist)}
+.quad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;border-top:1px solid var(--navy-line-2);padding-top:26px}
+.quad b{display:block;font-size:17px;font-weight:750;margin-bottom:6px}
+.quad span{font-size:15px;line-height:1.5;color:var(--mist)}
+.quad .t b{color:var(--gold)}
+.cloud{flex:1 1 380px;max-width:540px;width:100%;aspect-ratio:1/1;position:relative;border:1px solid var(--navy-line-2);background:radial-gradient(120% 90% at 50% 100%,#14294B 0%,#0B1628 70%);min-width:0}
+.cloud canvas{position:absolute;inset:0;width:100%;height:100%}
+.cloud .lbl{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mist);background:rgba(11,22,40,.75);border:1px solid var(--navy-line-2);padding:6px 9px}
+.cloud .lbl b{color:var(--gold);font-weight:500}
 
-/* workflow */
-.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:step}
-.step{padding:0 28px 0 0;position:relative}
-.step .rail{height:2px;background:var(--line);position:relative;margin-bottom:30px}
-.step .rail::before{content:"";position:absolute;left:0;top:-5px;width:12px;height:12px;background:var(--granite);border:2px solid var(--signal);transform:rotate(45deg)}
-.step .mono{color:var(--mute)}
-.step h3{margin:12px 0 14px}
-.step p{color:var(--bone-dim);font-size:15.5px}
-@media (max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}}
-@media (max-width:560px){.flow{grid-template-columns:1fr}}
+/* projects */
+.proj-sec{background:var(--white)}
+.projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:40px 28px}
+.proj{display:flex;flex-direction:column;gap:14px}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.proj .mono{font-size:12px;letter-spacing:.1em;color:var(--steel)}
+.proj h3{font-size:25px;font-weight:750;font-stretch:88%;line-height:1.15}
+.proj p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.proj.dark{background:var(--navy);color:var(--paper);padding:32px;justify-content:flex-end;min-height:360px}
+.proj.dark .mono{color:var(--gold)} .proj.dark p{color:var(--mist)}
 
-/* deliverables strip */
-.deliver{margin-top:clamp(56px,7vw,90px);border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-.deliver div{padding:24px 24px 26px;border-right:1px solid var(--line)}
-.deliver div:last-child{border-right:0}
-.deliver b{display:block;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lichen);margin-bottom:10px}
-.deliver span{color:var(--bone-dim);font-size:15px}
-@media (max-width:900px){.deliver{grid-template-columns:repeat(2,minmax(0,1fr))}.deliver div:nth-child(2){border-right:0}.deliver div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
-@media (max-width:520px){.deliver{grid-template-columns:1fr}.deliver div{border-right:0;border-bottom:1px solid var(--line)}.deliver div:last-child{border-bottom:0}}
+/* clients */
+.clients{background:var(--paper);border-top:1px solid var(--rule)}
+.clients .w{padding-top:64px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.clients .mono{color:var(--steel)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--rule-2);border-left:1px solid var(--rule-2)}
+.cgrid div{border-right:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);padding:24px 20px;display:flex;flex-direction:column;gap:6px}
+.cgrid b{font-size:20px;font-weight:750;font-stretch:88%}
+.cgrid span{font-size:14px;color:var(--ink-2)}
 
-/* sectors */
-.sectors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line)}
-.sector{padding:28px 22px 30px 0;border-bottom:1px solid var(--line)}
-.sector b{display:block;font-size:19px;font-stretch:108%;margin-bottom:8px}
-.sector span{color:var(--bone-dim);font-size:14.5px}
-@media (max-width:980px){.sectors{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}}
-@media (max-width:520px){.sectors{grid-template-columns:1fr}}
+/* how */
+.how{background:var(--paper);border-top:1px solid var(--rule)}
+.how .w{display:flex;flex-wrap:wrap-reverse;gap:64px;align-items:center}
+.how img{flex:1 1 380px;max-width:520px;width:100%;aspect-ratio:1/1;object-fit:cover;min-width:0}
+.how .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:26px}
+.how .mono{color:var(--steel)}
+.how p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.how .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--rule-2);padding-top:20px;font-family:var(--mono);font-size:13px;color:var(--steel)}
 
 /* records */
-.records{background:var(--granite-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.rec-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,6vw,90px);align-items:start}
-.rec-grid p.lead{font-size:clamp(18px,1.7vw,21px);color:#cfcabf;margin-top:28px;max-width:46ch}
-.rec-cards{display:grid;gap:14px}
-.rec-card{border:1px solid var(--line);background:var(--granite);padding:24px 26px}
-.rec-card .mono{color:var(--mute);display:block;margin-bottom:10px}
-.rec-card p{color:var(--bone-dim);font-size:15.5px}
-.rec-card a{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
-@media (max-width:860px){.rec-grid{grid-template-columns:1fr}}
+.rec{background:var(--navy-2);color:var(--paper)}
+.rec .mono.k{color:var(--mist-2)}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:stretch;margin-top:48px}
+.rcard{margin:0;background:var(--navy);border:1px solid var(--navy-line-2);display:flex;flex-direction:column}
+.rcard figcaption{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.rcard figcaption b{font-size:18px;font-weight:750}
+.rcard figcaption span{font-size:15px;line-height:1.55;color:var(--mist)}
+.rlight{background:var(--paper);color:var(--ink);padding:32px 30px;display:flex;flex-direction:column;gap:18px;justify-content:flex-end}
+.rlight .mono{font-size:12px;letter-spacing:.1em;color:#8A6A24}
+.rlight .t{font-size:30px}
+.rlight p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.rlight a{color:var(--ink);font-size:15px;font-weight:700;text-underline-offset:6px}
 
-/* contact */
-.contact{overflow:hidden}
-.contact h2{font-size:clamp(44px,8vw,112px);letter-spacing:-.035em;font-stretch:118%;max-width:13ch}
-.contact-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--line)}
-.contact-row > *{padding:26px 24px 26px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.contact-row .mono{color:var(--mute);display:block;margin-bottom:10px}
-.contact-row b{font-size:clamp(20px,2vw,26px);font-weight:600;font-stretch:108%}
-.contact-row a:hover b{color:var(--signal)}
-@media (max-width:780px){.contact-row{grid-template-columns:1fr}}
+/* yosemite */
+.yos{min-height:640px;color:var(--paper);display:flex;align-items:center;overflow:hidden}
+.yos > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yos .shade{position:absolute;inset:0;background:rgba(11,22,40,.6)}
+.yos .in{position:relative;width:100%;padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:24px}
+.yos .mono{color:#D6DDE8}
+.yos h2{max-width:860px} .yos h2 span{color:var(--gold)}
+.yos p{font-size:19px;line-height:1.6;color:#E3E7EE;max-width:660px}
 
-footer{border-top:1px solid var(--line);padding:34px 0 44px}
-.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:13.5px;color:var(--mute)}
-.foot .mono{font-size:11px}
-.foot p{max-width:62ch}
+/* cta */
+.cta{background:var(--gold);color:var(--navy)}
+.cta .w{padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px}
+.cta h2{font-size:56px;max-width:720px}
+.cta .btn-navy{background:var(--navy);color:var(--paper)} .cta .btn-navy:hover{background:var(--navy-2);color:var(--paper)}
+.cta .btn-out{border:1.5px solid var(--navy);color:var(--navy);font-family:var(--mono);font-weight:500;letter-spacing:0;text-transform:none}
 
-/* reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  .ticker-track{animation:none}
-  .readout .live::before{animation:none}
-  html{scroll-behavior:auto}
+/* footer */
+footer{background:var(--navy);color:var(--mist)}
+footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:column;gap:40px}
+.ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;flex:0 1 680px;font-size:15px;line-height:1.7}
+.fcols .mono{font-size:12px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.fcols a{color:#E9ECF2;text-decoration:none}
+.ftop .brand{align-self:flex-start}
+.fbot{border-top:1px solid var(--navy-line);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#8E9DB6}
+.fbot .mono{font-size:13px;letter-spacing:0;text-transform:none}
+
+@media (max-width:900px){
+  .nav,.phone{display:none}
+  .hero h1{font-size:64px}
+  .h2{font-size:44px}
+  .cta h2{font-size:42px}
+  .hero{min-height:720px}
+  .cap{text-align:left}
+  .brand b{font-size:23px}
 }
+@media (max-width:420px){.q-full{display:none}.quote{padding:0 14px;font-size:12.5px}.brand svg{width:38px;height:38px}}
+@media (prefers-reduced-motion:reduce){.hero .sweep{animation:none;display:none}.readout .on::before{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <header class="site" id="top">
-  <div class="wrap bar">
+  <div class="w bar">
     <a class="brand" href="#top" aria-label="Terrane Geomatics home">
-      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M2 26 L11 11 L16 18 L21 9 L30 26 Z" stroke="#ece6da" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M7.5 21 H24.5" stroke="#ff6a2b" stroke-width="1.8"/>
-        <circle cx="21" cy="9" r="2" fill="#ff6a2b"/>
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="46" height="46" stroke="#C9A04E" stroke-width="2"/>
+        <path d="M6 37c6-1 9-6 14-6s7 3 12 3 8-3 10-4" stroke="#C9A04E" stroke-width="1.6" opacity=".55"/>
+        <path d="M6 31c5-2 8-10 13-10s6 5 10 5 9-8 13-9" stroke="#C9A04E" stroke-width="1.6" opacity=".8"/>
+        <path d="M6 41L19 14l8 12 5-7 10 22" stroke="#F3F2EE" stroke-width="2.2" stroke-linejoin="round"/>
+        <circle cx="32" cy="19" r="2.6" fill="#C9A04E"/>
       </svg>
-      <b>TERRANE</b>
-      <span>Geomatics</span>
+      <span class="name"><b>TERRANE</b><small>Geomatics</small></span>
     </a>
-    <nav class="main" aria-label="Main">
+    <nav class="nav" aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#high-country">High Country</a>
-      <a href="#workflow">Workflow</a>
+      <a href="#technology">Technology</a>
+      <a href="#projects">Projects</a>
       <a href="#records">Records</a>
-      <a class="cta" href="#contact">Start a project</a>
     </nav>
+    <div class="bar-r">
+      <a class="phone" href="tel:5596837661">559.683.7661</a>
+      <a class="quote" href="#contact"><span class="q-full">Request a&nbsp;</span>Quote</a>
+    </div>
   </div>
 </header>
 
 <main>
 <section class="hero" aria-label="Introduction">
-  <canvas id="terrain" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <p class="mono kicker reveal">Geomatics · Sierra Nevada, California</p>
-    <h1 class="reveal">Ground truth, from tunnel to <em>summit.</em></h1>
-    <div class="hero-sub">
-      <div class="reveal">
-        <p>Terrane Geomatics delivers survey-grade data for heavy civil, infrastructure and land: drone and laser scanning, precision layout, deformation monitoring, tunnel control and boundary work. Every job is led by a licensed land surveyor.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">Scope a project
-            <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <a class="btn ghost" href="#services">What we do</a>
+  <img src="img/hero-alpine-lake.jpg" alt="Survey tripods, rods and instrument cases loaded in an aluminum boat crossing a remote alpine lake toward snow-dusted peaks at dawn">
+  <div class="shade"></div>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="w in">
+    <div class="mono kick">Geomatics &amp; land surveying · Oakhurst, California</div>
+    <h1>Precise data<br><span>from difficult places.</span></h1>
+    <p class="lead">Drone and laser scanning, precision layout, deformation monitoring and tunnel surveys, plus the hard boundary and ALTA work we've always loved. Licensed land surveyors at Yosemite's South Entrance.</p>
+    <div class="acts">
+      <a class="btn btn-gold" href="#contact">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="#services">Our services</a>
+    </div>
+    <div class="foot">
+      <div class="readout" aria-label="Office location">
+        <span class="on">Base</span><b>Oakhurst, CA</b>
+        <span>Lat</span><b>37°20′04″ N</b>
+        <span>Lon</span><b>119°39′24″ W</b>
+      </div>
+      <div class="cap">Crossing a remote alpine lake to recover original section corners.</div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" aria-label="By the numbers">
+  <div class="w">
+    <div class="stat"><b>14,800+</b><span>surveys in the records we hold</span></div>
+    <div class="stat"><b>0.005 ft</b><span>(1/16″) reporting threshold on a monitored retaining wall</span></div>
+    <div class="stat"><b>½ mile+</b><span>of tunnel laid out, and still advancing</span></div>
+    <div class="stat"><b>PLS</b><span>in responsible charge of every job</span></div>
+  </div>
+</section>
+
+<section class="svc-sec pad" id="services">
+  <div class="w">
+    <div class="head">
+      <div class="mono">What we do</div>
+      <h2 class="h2 cond">From 1800s stones to millimeter scans.</h2>
+      <p>Same range, sharper tools. We've added reality capture, monitoring and underground work to the boundary and construction surveying our clients already trust us with.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc new">
+        <img src="img/drone-orchard.jpg" alt="Survey drone on an orange landing pad beside an orchard" loading="lazy">
+        <div class="body">
+          <div class="tag">Reality capture</div>
+          <h3>Drone &amp; laser scanning</h3>
+          <p>Drone LiDAR and photogrammetry, Leica terrestrial scanning, orthophotos and 3D surfaces, all tied to real survey control.</p>
+          <div class="spec">Point clouds · Orthos · Volumes · As-builts</div>
         </div>
-      </div>
-      <div class="readout reveal" aria-label="Base location">
-        <div><span class="live">Base station</span><b>Oakhurst, CA</b></div>
-        <div><span>Lat</span><b>37°20′04″ N</b></div>
-        <div><span>Lon</span><b>119°39′24″ W</b></div>
-        <div><span>Datum</span><b>NAD83(2011)</b></div>
-        <div><span>Scan</span><b id="scanpct">000.0%</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>UAS LiDAR</span><span>Photogrammetry</span><span>Terrestrial laser scanning</span><span>Robotic total stations</span><span>GNSS / RTK</span><span>Digital leveling</span><span>Least-squares adjustment</span><span>Point clouds</span><span>Civil 3D</span><span>ALTA/NSPS</span>
-    <span>UAS LiDAR</span><span>Photogrammetry</span><span>Terrestrial laser scanning</span><span>Robotic total stations</span><span>GNSS / RTK</span><span>Digital leveling</span><span>Least-squares adjustment</span><span>Point clouds</span><span>Civil 3D</span><span>ALTA/NSPS</span>
-  </div>
-</div>
-
-<section class="pad" id="services">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="mono kicker">Services</span>
-        <h2>Six disciplines.<br>One standard of proof.</h2>
-      </div>
-      <p class="reveal">We bring modern sensors to the field and back every number with checks, redundancy and a stamped deliverable. The technology changes; accountability doesn't.</p>
-    </div>
-
-    <div class="services">
-      <article class="svc reveal">
-        <div class="num">01 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="18" y="14" width="12" height="7" rx="1"/><path d="M18 17H6M30 17h12M8 13v8M40 13v8"/><path d="M24 21v4" /><path d="M12 42l12-17 12 17" stroke="#ff6a2b" stroke-dasharray="2 3"/></svg>
-        <h3>Drone &amp; reality capture</h3>
-        <p>UAS LiDAR, photogrammetry and terrestrial scanning turned into clean surfaces, volumes and as-built models, tied to real control.</p>
-        <ul><li>Topo</li><li>Volumes</li><li>Point clouds</li><li>As-builts</li></ul>
       </article>
-      <article class="svc reveal">
-        <div class="num">02 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 12h36M6 24h36M6 36h36M12 6v36M24 6v36M36 6v36" opacity=".45"/><rect x="20" y="20" width="8" height="8" stroke="#ff6a2b"/><path d="M24 15v-3M24 36v-3M15 24h-3M36 24h-3" stroke="#ff6a2b"/></svg>
-        <h3>Precision layout</h3>
-        <p>Grid control, anchor bolts, embed plates and structural layout, with as-built verification against design before anyone pours.</p>
-        <ul><li>Grid control</li><li>Embeds</li><li>Anchor bolts</li><li>QA/QC</li></ul>
+      <article class="svc">
+        <img src="img/treatment-plant.jpg" alt="Precast concrete treatment plant building under construction with a crane in the Merced River canyon" loading="lazy">
+        <div class="body">
+          <div class="tag">Construction</div>
+          <h3>Precision layout</h3>
+          <p>Control, grid lines, anchor bolts and embed plates for plants, structures and buildings, with as-built checks before the pour.</p>
+          <div class="spec">Held to &lt; 0.01 ft</div>
+        </div>
       </article>
-      <article class="svc reveal">
-        <div class="num">03 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 40h38M5 8v32"/><path d="M8 30l7-2 7 1 7-4 7 1 7-3" /><path d="M8 22h36" stroke="#ff6a2b" stroke-dasharray="3 3"/><circle cx="36" cy="26" r="2.2" fill="currentColor"/></svg>
-        <h3>Deformation monitoring</h3>
-        <p>Repeatable epochs on structures, shoring and slopes, with movement checked against tolerance and reported in plain terms contractors can act on.</p>
-        <ul><li>Settlement</li><li>Shoring</li><li>Slopes</li><li>Epoch reports</li></ul>
+      <article class="svc new">
+        <img src="img/prism-riverbed.jpg" alt="Orange survey prism on a tripod above a granite riverbed under pines" loading="lazy">
+        <div class="body">
+          <div class="tag">Heavy civil</div>
+          <h3>Deformation monitoring</h3>
+          <p>Repeat epochs on structures, walls and slopes during construction, compared to tolerance and reported so crews can act the same day.</p>
+          <div class="spec">0.005 ft reporting threshold</div>
+        </div>
       </article>
-      <article class="svc reveal">
-        <div class="num">04 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 40V24a18 18 0 0136 0v16"/><path d="M14 40V26a10 10 0 0120 0v14" opacity=".45"/><path d="M4 40h40"/><circle cx="24" cy="16" r="2" fill="#ff6a2b" stroke="none"/><path d="M24 18v22" stroke="#ff6a2b" stroke-dasharray="2 3"/></svg>
-        <h3>Tunnel &amp; underground</h3>
-        <p>Portal-to-portal control transfer, alignment and guidance support, profile scans and convergence measurements where GNSS can't reach.</p>
-        <ul><li>Control transfer</li><li>Alignment</li><li>Convergence</li><li>Profiles</li></ul>
+      <article class="svc new">
+        <img src="img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo working at the lit heading" loading="lazy">
+        <div class="body">
+          <div class="tag">Underground</div>
+          <h3>Tunnel surveys</h3>
+          <p>Control carried underground, line and grade at the heading, and scans of the excavated profile where GNSS can't follow.</p>
+          <div class="spec">½ mile+ of decline and advancing</div>
+        </div>
       </article>
-      <article class="svc reveal">
-        <div class="num">05 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 10l30 4-4 26-24-6z"/><circle cx="8" cy="10" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="38" cy="14" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="34" cy="40" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="10" cy="34" r="2.4" fill="#ff6a2b" stroke="none"/></svg>
-        <h3>Boundary &amp; ALTA</h3>
-        <p>Hard boundary problems, retracements and ALTA/NSPS Land Title Surveys done the careful way: research first, evidence second, opinion last.</p>
-        <ul><li>ALTA/NSPS</li><li>Retracement</li><li>Records of Survey</li><li>Easements</li></ul>
+      <article class="svc">
+        <img src="img/cadastral-cap.jpg" alt="Weathered Bureau of Land Management cadastral survey cap among leaves and rocks" loading="lazy">
+        <div class="body">
+          <div class="tag">Boundary <em>Still our favorite</em></div>
+          <h3>Boundary, ROS &amp; ALTA</h3>
+          <p>Hard boundary problems, original GLO corners, records of survey and ALTA/NSPS surveys on 1,000 to 5,000+ acres. Expert witness work, too.</p>
+          <div class="spec">Research · Evidence · Defensible math</div>
+        </div>
       </article>
-      <article class="svc reveal">
-        <div class="num">06 <i>→</i></div>
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 42l14-22 8 10 7-14 13 26z"/><path d="M32 16V5" stroke="#ff6a2b"/><path d="M28 5h8" stroke="#ff6a2b"/><path d="M10 34c6-3 10 1 16-2s10 0 14-2" opacity=".45"/></svg>
-        <h3>High-country topo &amp; control</h3>
-        <p>Geodetic control networks and topography on ridgelines, summits and remote sites, including packed-in gear, long static sessions and no-signal days.</p>
-        <ul><li>Geodetic control</li><li>Summit topo</li><li>Static GNSS</li><li>Remote sites</li></ul>
+      <article class="svc">
+        <img src="img/yosemite-domes.jpg" alt="Granite domes above a forested valley in Yosemite with survey equipment on rock" loading="lazy">
+        <div class="body">
+          <div class="tag">High country</div>
+          <h3>Mountaintop topo &amp; control</h3>
+          <p>Geodetic control and topography on ridges, summits and remote sites: packed-in gear, long static sessions and no cell service.</p>
+          <div class="spec">Static GNSS · Remote control networks</div>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="high pad" id="high-country">
-  <div class="wrap high-grid">
-    <div>
-      <p class="mono kicker reveal">Home ground</p>
-      <h2 class="reveal">Built for granite, grade and thin air.</h2>
-      <p class="lead reveal">We work from the edge of Yosemite, and the Sierra is still our favorite office. Steep terrain, long hikes to the point, weather windows and park rules are part of the job here, not a surcharge on it.</p>
-      <div class="high-list reveal">
-        <div><b>Terrain</b><span>Granite domes, timbered slopes and ridgelines where line of sight is earned.</span></div>
-        <div><b>Logistics</b><span>Pack-in instruments, backup power and long static sessions for remote control.</span></div>
-        <div><b>Agencies</b><span>Comfortable with federal, state and county requirements on public land.</span></div>
-        <div><b>Range</b><span>Foothills to high country, and anywhere in California a project needs us.</span></div>
+<section class="tech pad" id="technology">
+  <div class="w">
+    <div class="txt">
+      <div class="mono">The work, evolved</div>
+      <h2 class="h2 cond">Archaeology. History. Math. <span>Technology.</span></h2>
+      <p class="lead">Surveying has always been all four at once. What's changed is how much ground the technology now covers in a day, and how much more a client can see in what we hand back.</p>
+      <div class="quad">
+        <div><b>Archaeology</b><span>Digging for stones, pipes and bearing trees set more than a century ago.</span></div>
+        <div><b>History</b><span>GLO field notes, old deeds, and decades of local survey records.</span></div>
+        <div><b>Math</b><span>Least-squares adjustments, proportioning and closures we can defend.</span></div>
+        <div class="t"><b>Technology</b><span>Leica scanners, drone LiDAR, robotic total stations and GNSS, turned into models clients can use.</span></div>
       </div>
     </div>
-    <div class="contour-card reveal" aria-hidden="true">
-      <svg id="contours" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"></svg>
-      <span class="tag" style="left:8%;top:7%">CP-101 · STATIC 4H</span>
-      <span class="tag" style="right:8%;bottom:9%">CI 20 FT · NAVD88</span>
+    <div class="cloud" aria-label="Animated point cloud of a mountain scan">
+      <canvas id="cloud"></canvas>
+      <span class="lbl" style="left:14px;top:14px">SCAN <b id="pct">000%</b></span>
+      <span class="lbl" style="right:14px;bottom:14px">PTS <b id="pts">0</b></span>
     </div>
   </div>
 </section>
 
-<section class="pad" id="workflow">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="reveal">
-        <span class="mono kicker">Workflow</span>
-        <h2>Technology where it pays. Judgment everywhere.</h2>
-      </div>
-      <p class="reveal">Faster capture only matters if the data holds up. Every Terrane project runs the same four-step path, from scoping call to signed deliverable.</p>
+<section class="proj-sec pad" id="projects">
+  <div class="w">
+    <div class="head">
+      <div class="mono">Recent work</div>
+      <h2 class="h2 cond">Selected projects.</h2>
     </div>
-    <div class="flow">
-      <div class="step reveal"><div class="rail"></div><span class="mono">01 · Plan</span><h3>Scope to tolerance</h3><p>We start with how the data will be used, then pick the tools and accuracy that fit. No overbuying precision, no guessing.</p></div>
-      <div class="step reveal"><div class="rail"></div><span class="mono">02 · Capture</span><h3>Right sensor, right day</h3><p>Drone, scanner, robot or rod: often a mix, always tied to redundant control you can audit.</p></div>
-      <div class="step reveal"><div class="rail"></div><span class="mono">03 · Adjust</span><h3>Prove it</h3><p>Least-squares adjustment, independent checks and residuals reviewed by a licensed surveyor before anything leaves the office.</p></div>
-      <div class="step reveal"><div class="rail"></div><span class="mono">04 · Deliver</span><h3>Ready to build on</h3><p>Files in your formats, reports your team can read in a minute, and a surveyor who picks up the phone.</p></div>
-    </div>
-    <div class="deliver reveal">
-      <div><b>CAD &amp; surfaces</b><span>Civil 3D, DWG/DXF, LandXML</span></div>
-      <div><b>Reality data</b><span>LAS/LAZ, E57, orthomosaics</span></div>
-      <div><b>Field-ready</b><span>Point files for any total station or GNSS rover</span></div>
-      <div><b>Reports</b><span>Monitoring, as-built and control reports, signed</span></div>
+    <div class="projs">
+      <article class="proj"><img src="img/prism-vernal-fall.jpg" alt="Orange survey prism above Vernal Fall with granite cliffs behind" loading="lazy"><div class="mono">Yosemite National Park · Laser scanning</div><h3>Vernal Fall to Curry Village</h3><p>Topographic survey from the top of Vernal Fall down to Lady Franklin Rock, through Happy Isles and along the road back to Curry Village, captured with a Leica laser scanner.</p></article>
+      <article class="proj"><img src="img/total-station-trail.jpg" alt="Robotic total station set up on a trail beside a wooden fence and granite boulders" loading="lazy"><div class="mono">Yosemite National Park · Design &amp; layout</div><h3>Bridalveil Fall accessible trails</h3><p>All of the topographic surveying, mapping and construction layout for the Bridalveil Fall trails and overlooks.</p></article>
+      <article class="proj"><img src="img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo at the heading and survey paint marks on the rib" loading="lazy"><div class="mono">Underground · Line &amp; grade</div><h3>Decline tunnel layout</h3><p>Line and grade for an underground decline that's now more than half a mile long and still advancing.</p></article>
+      <article class="proj"><img src="img/treatment-plant.jpg" alt="Precast treatment plant building under construction with a mobile crane at El Portal" loading="lazy"><div class="mono">Heavy civil · Yosemite</div><h3>El Portal &amp; Tuolumne Meadows treatment plants</h3><p>Control and construction layout for two Yosemite wastewater plants, including structural steel and precast buildings, plus structural deformation monitoring with a 0.005 ft (1/16″) reporting threshold.</p></article>
+      <article class="proj"><img src="img/ranch-rock-wall.jpg" alt="Oak woodland pasture with an old rock wall running across green grass" loading="lazy"><div class="mono">Agricultural · ROS &amp; ALTA</div><h3>5,000-acre ranch</h3><p>Record of survey and ALTA survey to support a major ranch transaction, one of many large-acreage ALTAs delivered across California.</p></article>
+      <article class="proj"><img src="img/section-corner-poster.jpg" alt="Yellow Forest Service location poster nailed to a tree, marking a section corner" loading="lazy"><div class="mono">Boundary · Retracement</div><h3>1,000-acre ranch, original corners</h3><p>Original GLO section corners recovered across a thousand acres, then intermediate points set along the property lines to guide new fencing.</p></article>
+      <article class="proj"><img src="img/boat-lake.jpg" alt="Survey gear in the bow of a boat on a mountain lake at sunrise" loading="lazy"><div class="mono">Remote · Drone 3D</div><h3>Across an alpine lake</h3><p>By boat to recover old section corners on the far shore, then a drone flight for a 3D model and orthophoto of the site.</p></article>
+      <article class="proj"><img src="img/research-post.jpg" alt="Numbered measurement post at an ecological research site" loading="lazy"><div class="mono">Science · Field sites</div><h3>Ecological observatory field sites</h3><p>Surveys at long-term ecological research sites from California to Oregon and Virginia, for a national science program.</p></article>
+      <article class="proj dark"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A04E" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 006 0L7 7zM17 7l-3 7a3 3 0 006 0l-3-7zM8 21h8"/></svg><div class="mono">Legal · Expert witness</div><h3>Contentious boundary disputes</h3><p>Expert witness work on complicated boundary cases, where the history, the evidence and the math all have to hold up.</p></article>
     </div>
   </div>
 </section>
 
-<section class="pad" style="padding-top:0" aria-label="Who we work with">
-  <div class="wrap">
-    <p class="mono kicker reveal" style="margin-bottom:26px">Who we work with</p>
-    <div class="sectors reveal">
-      <div class="sector"><b>Contractors</b><span>Heavy civil, structures, tunnels, utilities</span></div>
-      <div class="sector"><b>Agencies</b><span>Water, transportation, parks and public lands</span></div>
-      <div class="sector"><b>Engineers &amp; architects</b><span>Existing conditions and design control</span></div>
-      <div class="sector"><b>Owners &amp; developers</b><span>ALTA, entitlement and site due diligence</span></div>
-      <div class="sector"><b>Title &amp; legal</b><span>Boundary opinions, easements and disputes</span></div>
+<section class="clients" aria-label="Clients">
+  <div class="w">
+    <div class="mono">Who we work for</div>
+    <div class="cgrid">
+      <div><b>Federal &amp; county agencies</b><span>National parks, counties and public utilities</span></div>
+      <div><b>National contractors</b><span>Heavy civil, treatment plants and underground</span></div>
+      <div><b>Institutional ag investors</b><span>Large-acreage ALTA surveys across California</span></div>
+      <div><b>Architects &amp; engineers</b><span>Design surveys, scans and construction support</span></div>
+      <div><b>Research programs</b><span>Ecological field sites in three states</span></div>
+      <div><b>Landowners &amp; attorneys</b><span>Boundaries, ranches and expert witness work</span></div>
     </div>
   </div>
 </section>
 
-<section class="records pad" id="records">
-  <div class="wrap rec-grid">
-    <div>
-      <p class="mono kicker reveal">Local records</p>
-      <h2 class="reveal">New tools. Deep local records.</h2>
-      <p class="lead reveal">Terrane Geomatics holds the survey records of Jones &amp; Snyder Surveying (1976–2015): maps, field notes and monument history across the Sierra foothills. Those records help us find evidence faster and retrace lines with confidence. Every new survey is our own work, under our own contract.</p>
+<section class="how pad" id="about">
+  <div class="w">
+    <img src="img/creek-total-station.jpg" alt="Surveyor standing in a shallow snowmelt creek beside a total station on a tripod" loading="lazy">
+    <div class="txt">
+      <div class="mono">How we work</div>
+      <h2 class="h2 cond">Better,<br>not bigger.</h2>
+      <p>Technology lets a small, senior team cover more ground without adding layers. A seasoned licensed land surveyor runs the field work, then runs the calculations and signs the deliverable. No hand-offs between crew, CAD tech and project manager, and nothing lost in between.</p>
+      <p>We'd rather grow better than bigger.</p>
+      <div class="row"><span>Licensed land surveyors · Oakhurst, California</span></div>
     </div>
-    <div class="rec-cards">
-      <div class="rec-card reveal">
-        <span class="mono">Since 2015</span>
-        <p>Terrane Geomatics, Inc. has operated in Oakhurst under new ownership since 2015, doing business locally as Jones Snyder &amp; Associates.</p>
-      </div>
-      <div class="rec-card reveal">
-        <span class="mono">Records requests</span>
-        <p>Need a copy of a historic map or field note? We'll send the copy of record, provided as-is for reference. New reliance requires a new survey.</p>
+  </div>
+</section>
+
+<section class="rec pad" id="records">
+  <div class="w">
+    <div class="head" style="margin-bottom:0">
+      <div class="mono k">The records we hold</div>
+      <h2 class="h2 cond">The ground truth.</h2>
+    </div>
+    <div class="rgrid">
+      <figure class="rcard"><img src="img/ls4298-cap.jpg" alt="Aluminum Forest Service cadastral survey cap stamped L.S. 4298, 1987" style="width:100%;aspect-ratio:7/8;object-fit:cover"><figcaption><b>L.S. 4298, still holding</b><span>Stephen Jones of Jones &amp; Snyder Surveying set this Forest Service cadastral corner in 1987. Corners like it, and the notes behind them, are why the old records still matter.</span></figcaption></figure>
+      <figure class="rcard"><div style="padding:12px;flex-grow:1;display:flex;align-items:center"><img src="img/job-heatmap.png" alt="Heat map of job locations across California, brightest around Oakhurst, with points from Redding to San Diego" style="width:100%;height:auto"></div><figcaption><b>14,800+ jobs on file</b><span>Each point is a job in the records we hold. Most are close to home; hundreds more reach from Redding to San Diego. Decades of field notes and found monuments mean faster research and fewer surprises.</span></figcaption></figure>
+      <div class="rlight">
+        <div class="mono">An old library, a new company</div>
+        <div class="t cond">Old records. Our own work.</div>
+        <p>Terrane Geomatics holds the survey records of Jones &amp; Snyder Surveying, the firm that worked here before us.</p>
+        <p>Every new survey is our own work, under our own contract. Maps from the older files are available as copies of record.</p>
         <a href="#contact">Request a copy of record</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact pad" id="contact">
-  <div class="wrap">
-    <p class="mono kicker reveal">Start a project</p>
-    <h2 class="reveal">Tell us where. We'll get you the ground truth.</h2>
-    <div class="contact-row reveal">
-      <a href="tel:+15596837661"><span class="mono">Call</span><b>559.683.7661</b></a>
-      <a href="mailto:info@terrane.land"><span class="mono">Email</span><b>info@terrane.land</b></a>
-      <div><span class="mono">Base</span><b>Oakhurst, California</b></div>
+<section class="yos" aria-label="Yosemite">
+  <img src="img/yosemite-domes.jpg" alt="Granite domes above a forested valley in Yosemite with survey equipment on rock in the foreground" loading="lazy">
+  <div class="shade"></div>
+  <div class="w in">
+    <div class="mono">Yosemite's South Entrance · Working statewide</div>
+    <h2 class="h2 cond">We still love Yosemite. <span>We still work in it.</span></h2>
+    <p>Our office is in Oakhurst, at the South Entrance to Yosemite National Park, and we've surveyed some of its best-known places. The work also takes us across California, from Sacramento Valley farmland to the high Sierra and Catalina Island.</p>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="w">
+    <h2 class="cond">Let's talk about your project.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a class="btn btn-navy" href="mailto:info@terrane.land?subject=Project%20inquiry">Request a Quote</a>
+      <a class="btn btn-out" href="tel:5596837661">559.683.7661</a>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <p>© 2026 Terrane Geomatics, Inc. Jones Snyder &amp; Associates is a dba of Terrane Geomatics, Inc. Professional land surveying services under the responsible charge of [Name], PLS [0000].</p>
-    <span class="mono">37°20′04″N 119°39′24″W</span>
+  <div class="w">
+    <div class="ftop">
+      <a class="brand" href="#top" aria-label="Terrane Geomatics home">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="1" y="1" width="46" height="46" stroke="#C9A04E" stroke-width="2"/><path d="M6 37c6-1 9-6 14-6s7 3 12 3 8-3 10-4" stroke="#C9A04E" stroke-width="1.6" opacity=".55"/><path d="M6 31c5-2 8-10 13-10s6 5 10 5 9-8 13-9" stroke="#C9A04E" stroke-width="1.6" opacity=".8"/><path d="M6 41L19 14l8 12 5-7 10 22" stroke="#F3F2EE" stroke-width="2.2" stroke-linejoin="round"/><circle cx="32" cy="19" r="2.6" fill="#C9A04E"/></svg>
+        <span class="name"><b>TERRANE</b><small>Geomatics</small></span>
+      </a>
+      <div class="fcols">
+        <div><div class="mono">Office</div>40315 Junction Drive, Suite H<br>Oakhurst, CA 93644<br>South Entrance to Yosemite</div>
+        <div><div class="mono">Contact</div><a href="tel:5596837661">559.683.7661</a><br><a href="mailto:info@terrane.land">info@terrane.land</a></div>
+        <div><div class="mono">Licensed</div>[Name], PLS [0000]<br>Licensed land surveyor in responsible charge</div>
+        <div><div class="mono">Service area</div>Statewide across California. Home base: Madera, Mariposa, Fresno &amp; Merced counties and Yosemite.</div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Terrane Geomatics, Inc. Also doing business as Jones Snyder &amp; Associates.</span>
+      <span class="mono">37°20′04″N 119°39′24″W</span>
+    </div>
   </div>
 </footer>
 
 <script>
 (function(){
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var P=new Uint8Array(512);(function(){var p=[],i,j,t,s=11;for(i=0;i<256;i++)p[i]=i;for(i=255;i>0;i--){s=(s*16807)%2147483647;j=s%(i+1);t=p[i];p[i]=p[j];p[j]=t;}for(i=0;i<512;i++)P[i]=p[i&255];})();
+  function f(t){return t*t*(3-2*t)}
+  function h(x,y){return P[P[x&255]+(y&255)]/255}
+  function n(x,y){var xi=Math.floor(x),yi=Math.floor(y),u=f(x-xi),v=f(y-yi),a=h(xi,yi),b=h(xi+1,yi),c=h(xi,yi+1),d=h(xi+1,yi+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;}
+  function fbm(x,y){var s=0,a=.5,q=1;for(var o=0;o<5;o++){s+=a*n(x*q,y*q);q*=2.03;a*=.5;}return s;}
+  function ht(x,z){var dome=Math.exp(-Math.pow((x-.15)/.42,2)-Math.pow((z-.62)/.28,2));var dome2=Math.exp(-Math.pow((x+.55)/.3,2)-Math.pow((z-.8)/.2,2))*.6;var r=1-Math.abs(fbm(x*1.6+2,z*1.8+5)*2-1);return .1*fbm(x*2.4,z*2.4)+.18*r*r+.75*dome+.5*dome2;}
 
-  // header solid on scroll
-  var hdr=document.querySelector('header.site');
-  function onScroll(){hdr.classList.toggle('solid', window.scrollY>40);}
-  addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-  // reveal
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window && !reduce){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(el){io.observe(el)});
-  } else els.forEach(function(el){el.classList.add('in')});
-
-  // value noise
-  var P=new Uint8Array(512);(function(){var p=[],i,j,t,s=7;for(i=0;i<256;i++)p[i]=i;for(i=255;i>0;i--){s=(s*16807)%2147483647;j=s%(i+1);t=p[i];p[i]=p[j];p[j]=t;}for(i=0;i<512;i++)P[i]=p[i&255];})();
-  function fade(t){return t*t*(3-2*t)}
-  function h2(x,y){return P[P[x&255]+(y&255)]/255}
-  function noise(x,y){var xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=fade(xf),v=fade(yf);
-    var a=h2(xi,yi),b=h2(xi+1,yi),c=h2(xi,yi+1),d=h2(xi+1,yi+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;}
-  function fbm(x,y){var s=0,a=.5,f=1;for(var o=0;o<5;o++){s+=a*noise(x*f,y*f);f*=2.03;a*=.5;}return s;}
-  function height(x,z){ // x in [-1.6,1.6], z in [0,1]
-    var r=Math.abs(1-Math.abs(fbm(x*1.3+3.1,z*1.6+1.7)*2-1)); // ridged
-    var massif=Math.exp(-Math.pow((x-0.25)/0.55,2))*Math.exp(-Math.pow((z-0.72)/0.35,2));
-    return 0.12*fbm(x*2.2,z*2.2)+0.30*r*r*(0.35+z*0.9)+0.55*massif;
-  }
-
-  // hero terrain point cloud
-  var cv=document.getElementById('terrain'),ctx=cv.getContext('2d'),pct=document.getElementById('scanpct');
-  var W,H,dpr,pts=[];
-  function build(){
-    pts=[];var NX=W<700?90:150,NZ=W<700?60:90;
-    for(var j=0;j<NZ;j++){var z=j/(NZ-1);for(var i=0;i<NX;i++){var x=-1.6+3.2*i/(NX-1);pts.push([x,z,height(x,z)]);}}
-  }
-  function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);build();}
+  var cv=document.getElementById('cloud');if(!cv)return;
+  var ctx=cv.getContext('2d'),pct=document.getElementById('pct'),ptsEl=document.getElementById('pts');
+  var W,H,pts=[],raf,visible=false;
+  function build(){pts=[];var NX=110,NZ=80;for(var j=0;j<NZ;j++){var z=j/(NZ-1);for(var i=0;i<NX;i++){var x=-1.2+2.4*i/(NX-1);pts.push([x,z,ht(x,z)]);}}}
+  function size(){var d=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);}
   function draw(t){
     ctx.clearRect(0,0,W,H);
-    var cx=W*(W<700?0.5:0.62),hor=H*(W<700?0.50:0.40),sc=Math.max(W*0.62,H*0.9),camH=0.78;
-    var sweep=reduce?0.55:((t*0.00006)%1.25)-0.1;
-    var drift=reduce?0:Math.sin(t*0.00008)*0.06;
+    var sweep=reduce?1.1:((t*0.00009)%1.35)-0.1, rot=reduce?0.5:0.5+Math.sin(t*0.00012)*0.35;
+    var cs=Math.cos(rot),sn=Math.sin(rot),cx=W*0.47,cy=H*0.6,sc=W*0.5,shown=0;
     for(var k=0;k<pts.length;k++){
-      var p=pts[k],x=p[0]+drift,z=p[1],y=p[2];
-      var zc=0.7+z*2.3;
-      var sx=cx+x*sc/zc, sy=hor+(camH-y*1.35)*sc*0.42/zc;
-      if(sx<-4||sx>W+4||sy<-4||sy>H+4)continue;
-      var near=1-z, d=Math.abs(z-sweep);
-      var a=0.22+near*0.6, r=0.8+near*1.3;
-      if(d<0.035){ctx.fillStyle='rgba(255,106,43,'+(0.95-d*18)+')';r+=0.9;}
-      else if(z<sweep){ctx.fillStyle='rgba(236,230,218,'+a+')';}
-      else{ctx.fillStyle='rgba(140,152,158,'+(a*0.6)+')';}
-      ctx.fillRect(sx-r/2,sy-r/2,r,r);
+      var p=pts[k];if(p[1]>sweep)continue;shown++;
+      var x=p[0],z=p[1]-0.5,y=p[2];
+      var xr=x*cs-z*sn, zr=x*sn+z*cs;
+      var per=1/(1.55-zr*0.55);
+      var sx=cx+xr*sc*per, sy=cy+(-zr*0.62-y*0.78+0.32)*sc*per;
+      var near=0.5-zr, d=sweep-p[1];
+      if(d<0.03){ctx.fillStyle='rgba(226,190,115,'+(1-d*20)+')';ctx.fillRect(sx-1.3,sy-1.3,2.6,2.6);}
+      else{var a=0.22+Math.max(0,Math.min(1,near))*0.5, l=Math.min(1,y*1.3);
+        ctx.fillStyle='rgba('+Math.round(150+75*l)+','+Math.round(162+28*l)+','+Math.round(190-75*l)+','+a+')';ctx.fillRect(sx-.8,sy-.8,1.6,1.6);}
     }
-    if(pct){var v=Math.max(0,Math.min(1,sweep))*100;pct.textContent=(v<10?'00':v<100?'0':'')+v.toFixed(1)+'%';}
+    if(pct){var v=Math.round(Math.max(0,Math.min(1,sweep))*100);pct.textContent=('00'+v).slice(-3)+'%';}
+    if(ptsEl)ptsEl.textContent=shown.toLocaleString();
   }
-  var raf;function loop(t){draw(t);raf=requestAnimationFrame(loop);}
-  size();addEventListener('resize',function(){size();if(reduce)draw(0);});
-  if(reduce)draw(0);else raf=requestAnimationFrame(loop);
-  document.addEventListener('visibilitychange',function(){if(reduce)return;if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(loop);});
-
-  // contour map (marching squares)
-  (function(){
-    var svg=document.getElementById('contours');if(!svg)return;
-    var NX=80,NY=100,g=[],i,j;
-    for(j=0;j<=NY;j++){g[j]=[];for(i=0;i<=NX;i++){var x=i/NX,y=j/NY;
-      var peak=Math.exp(-(Math.pow((x-0.58)/0.24,2)+Math.pow((y-0.38)/0.2,2)));
-      var peak2=Math.exp(-(Math.pow((x-0.25)/0.18,2)+Math.pow((y-0.7)/0.16,2)))*0.55;
-      g[j][i]=peak*0.9+peak2+fbm(x*3+9,y*3+4)*0.35;}}
-    var sx=400/NX,sy=500/NY,out=[];
-    function lerp(a,b,l){return (l-a)/(b-a);}
-    for(var L=0,n=0;L<1.25;L+=0.05,n++){
-      var d='';
-      for(j=0;j<NY;j++)for(i=0;i<NX;i++){
-        var a=g[j][i],b=g[j][i+1],c=g[j+1][i+1],e=g[j+1][i];
-        var idx=(a>L?8:0)|(b>L?4:0)|(c>L?2:0)|(e>L?1:0);if(idx===0||idx===15)continue;
-        var T=[(i+lerp(a,b,L))*sx,j*sy],R=[(i+1)*sx,(j+lerp(b,c,L))*sy],B=[(i+lerp(e,c,L))*sx,(j+1)*sy],Lf=[i*sx,(j+lerp(a,e,L))*sy];
-        var segs={1:[[Lf,B]],2:[[B,R]],3:[[Lf,R]],4:[[T,R]],5:[[Lf,T],[B,R]],6:[[T,B]],7:[[Lf,T]],8:[[Lf,T]],9:[[T,B]],10:[[T,R],[Lf,B]],11:[[T,R]],12:[[Lf,R]],13:[[B,R]],14:[[Lf,B]]}[idx];
-        segs.forEach(function(s){d+='M'+s[0][0].toFixed(1)+' '+s[0][1].toFixed(1)+'L'+s[1][0].toFixed(1)+' '+s[1][1].toFixed(1);});
-      }
-      var idxL=n%5===0;
-      out.push('<path d="'+d+'" stroke="'+(idxL?'#141a1f':'#8b8578')+'" stroke-width="'+(idxL?1.3:0.7)+'" fill="none" opacity="'+(idxL?0.85:0.6)+'"/>');
-    }
-    // control points
-    out.push('<g fill="none" stroke="#d4501a" stroke-width="1.6"><path d="M228 182l9 -16 9 16z"/><circle cx="96" cy="356" r="6"/><path d="M90 356h12M96 350v12"/><circle cx="318" cy="430" r="6"/><path d="M312 430h12M318 424v12"/></g>');
-    out.push('<path d="M237 176L96 356L318 430Z" fill="none" stroke="#d4501a" stroke-width="1" stroke-dasharray="4 4" opacity=".8"/>');
-    svg.innerHTML=out.join('');
-  })();
+  function loop(t){draw(t);raf=requestAnimationFrame(loop);}
+  build();size();
+  addEventListener('resize',function(){size();if(reduce)draw(0);});
+  if(reduce){draw(0);return;}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;cancelAnimationFrame(raf);if(visible)raf=requestAnimationFrame(loop);});}).observe(cv);}
+  else raf=requestAnimationFrame(loop);
 })();
 </script>
 </body>
