@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Terrane Geomatics</title>
+<meta name="description" content="Terrane Geomatics, Inc. — reality capture, precision layout, deformation monitoring, tunnel surveys, boundary and ALTA surveys, and high-country control from the Sierra Nevada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --granite:#0d1114;
+  --granite-2:#151b20;
+  --granite-3:#1e262d;
+  --line:#2a343c;
+  --bone:#ece6da;
+  --bone-dim:#a9a69e;
+  --mute:#6f7a80;
+  --signal:#ff6a2b;
+  --lichen:#c7d36f;
+  --paper:#f3efe6;
+  --ink:#141a1f;
+  --wide:"Archivo",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --gutter:clamp(16px,4vw,56px);
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--granite);color:var(--bone);font-family:var(--wide);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg,canvas{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.kicker{color:var(--signal)}
+.kicker::before{content:"";display:inline-block;width:8px;height:8px;border:1.5px solid currentColor;transform:rotate(45deg);margin-right:12px;vertical-align:1px}
+h1,h2,h3{font-weight:700;margin:0;line-height:1.02;font-stretch:112%}
+h2{font-size:clamp(34px,5.2vw,64px);letter-spacing:-.02em}
+h3{font-size:22px;font-stretch:105%;letter-spacing:-.005em;line-height:1.15}
+p{margin:0}
+
+/* ---------- header ---------- */
+header.site{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.site.solid{background:rgba(13,17,20,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-color:var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand b{font-weight:800;font-stretch:125%;letter-spacing:.16em;font-size:19px}
+.brand span{color:var(--bone-dim);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border-left:1px solid var(--line);padding-left:14px}
+nav.main{display:flex;gap:34px;align-items:center}
+nav.main a{text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);transition:color .2s}
+nav.main a:hover{color:var(--bone)}
+nav.main a.cta{color:var(--granite);background:var(--signal);padding:10px 16px}
+nav.main a.cta:hover{color:var(--granite);background:#ff834f}
+@media (max-width:900px){nav.main a:not(.cta){display:none}.brand span{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:120px}
+#terrain{position:absolute;inset:0;width:100%;height:100%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,17,20,.55) 0%,rgba(13,17,20,0) 22%,rgba(13,17,20,0) 60%,rgba(13,17,20,.85) 90%,var(--granite) 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(40px,8vh,88px)}
+.hero h1{font-size:clamp(46px,8.6vw,124px);letter-spacing:-.035em;font-stretch:118%;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero-sub{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end;margin-top:36px}
+.hero-sub p{font-size:clamp(17px,1.6vw,20px);color:#d8d3c8;max-width:46ch;text-shadow:0 0 18px #0d1114,0 0 6px #0d1114}
+.readout{justify-self:end;border:1px solid var(--line);background:rgba(13,17,20,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:16px 18px;min-width:260px}
+.readout div{display:flex;justify-content:space-between;gap:24px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;padding:3px 0;color:var(--bone-dim)}
+.readout div b{font-weight:500;color:var(--bone)}
+.readout .live{color:var(--lichen)}
+.readout .live::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lichen);margin-right:8px;vertical-align:1px;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:16px 22px;border:1px solid var(--bone);transition:background .2s,color .2s,border-color .2s}
+.btn.primary{background:var(--signal);border-color:var(--signal);color:var(--granite)}
+.btn.primary:hover{background:#ff834f;border-color:#ff834f}
+.btn.ghost:hover{background:var(--bone);color:var(--granite)}
+.btn svg{width:16px;height:16px}
+@media (max-width:780px){.hero-sub{grid-template-columns:1fr;gap:28px}.readout{justify-self:stretch;min-width:0}}
+
+/* ---------- capability ticker ---------- */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:var(--granite)}
+.ticker-track{display:flex;gap:56px;padding:18px 0;white-space:nowrap;width:max-content;animation:tick 48s linear infinite}
+.ticker-track span{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim)}
+.ticker-track span::after{content:"+";color:var(--signal);margin-left:56px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.pad{padding:clamp(80px,12vw,150px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:clamp(44px,6vw,72px)}
+.sec-head p{color:var(--bone-dim);max-width:48ch;justify-self:end}
+.sec-head .mono{display:block;margin-bottom:22px}
+@media (max-width:820px){.sec-head{grid-template-columns:1fr}.sec-head p{justify-self:start}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 30px 38px;position:relative;transition:background .25s;min-height:330px;display:flex;flex-direction:column}
+.svc:hover{background:var(--granite-2)}
+.svc .num{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--mute);display:flex;justify-content:space-between}
+.svc .num i{font-style:normal;color:var(--signal);opacity:0;transition:opacity .25s}
+.svc:hover .num i{opacity:1}
+.svc .ico{width:46px;height:46px;margin:30px 0 26px;color:var(--bone)}
+.svc p{color:var(--bone-dim);font-size:15.5px;margin-top:14px}
+.svc ul{list-style:none;padding:0;margin:auto 0 0;padding-top:22px;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);border:1px solid var(--line);padding:4px 8px}
+@media (max-width:980px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.services{grid-template-columns:1fr}.svc{min-height:0}}
+
+/* high country */
+.high{background:var(--paper);color:var(--ink);overflow:hidden}
+.high .mono.kicker{color:#d4501a}
+.high-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(40px,6vw,90px);align-items:center}
+.high h2{color:var(--ink)}
+.high p.lead{font-size:clamp(18px,1.7vw,21px);color:#3a4248;margin-top:28px;max-width:44ch}
+.high-list{margin-top:36px;display:grid;gap:0;border-top:1px solid #d6cfc0}
+.high-list div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid #d6cfc0;font-size:15.5px;color:#3a4248}
+.high-list b{font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding-top:3px}
+.contour-card{position:relative;aspect-ratio:4/5;background:#e6e0d3;border:1px solid #d6cfc0}
+.contour-card svg{position:absolute;inset:0;width:100%;height:100%}
+.contour-card .tag{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink);background:var(--paper);border:1px solid #cdc5b4;padding:6px 9px}
+@media (max-width:860px){.high-grid{grid-template-columns:1fr}.contour-card{aspect-ratio:1/1}.high-list div{grid-template-columns:1fr;gap:4px}}
+
+/* workflow */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:step}
+.step{padding:0 28px 0 0;position:relative}
+.step .rail{height:2px;background:var(--line);position:relative;margin-bottom:30px}
+.step .rail::before{content:"";position:absolute;left:0;top:-5px;width:12px;height:12px;background:var(--granite);border:2px solid var(--signal);transform:rotate(45deg)}
+.step .mono{color:var(--mute)}
+.step h3{margin:12px 0 14px}
+.step p{color:var(--bone-dim);font-size:15.5px}
+@media (max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}}
+@media (max-width:560px){.flow{grid-template-columns:1fr}}
+
+/* deliverables strip */
+.deliver{margin-top:clamp(56px,7vw,90px);border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.deliver div{padding:24px 24px 26px;border-right:1px solid var(--line)}
+.deliver div:last-child{border-right:0}
+.deliver b{display:block;font-family:var(--mono);font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--lichen);margin-bottom:10px}
+.deliver span{color:var(--bone-dim);font-size:15px}
+@media (max-width:900px){.deliver{grid-template-columns:repeat(2,minmax(0,1fr))}.deliver div:nth-child(2){border-right:0}.deliver div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.deliver{grid-template-columns:1fr}.deliver div{border-right:0;border-bottom:1px solid var(--line)}.deliver div:last-child{border-bottom:0}}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--line)}
+.sector{padding:28px 22px 30px 0;border-bottom:1px solid var(--line)}
+.sector b{display:block;font-size:19px;font-stretch:108%;margin-bottom:8px}
+.sector span{color:var(--bone-dim);font-size:14.5px}
+@media (max-width:980px){.sectors{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}}
+@media (max-width:520px){.sectors{grid-template-columns:1fr}}
+
+/* records */
+.records{background:var(--granite-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,6vw,90px);align-items:start}
+.rec-grid p.lead{font-size:clamp(18px,1.7vw,21px);color:#cfcabf;margin-top:28px;max-width:46ch}
+.rec-cards{display:grid;gap:14px}
+.rec-card{border:1px solid var(--line);background:var(--granite);padding:24px 26px}
+.rec-card .mono{color:var(--mute);display:block;margin-bottom:10px}
+.rec-card p{color:var(--bone-dim);font-size:15.5px}
+.rec-card a{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+@media (max-width:860px){.rec-grid{grid-template-columns:1fr}}
+
+/* contact */
+.contact{overflow:hidden}
+.contact h2{font-size:clamp(44px,8vw,112px);letter-spacing:-.035em;font-stretch:118%;max-width:13ch}
+.contact-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(48px,6vw,72px);border-top:1px solid var(--line)}
+.contact-row > *{padding:26px 24px 26px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.contact-row .mono{color:var(--mute);display:block;margin-bottom:10px}
+.contact-row b{font-size:clamp(20px,2vw,26px);font-weight:600;font-stretch:108%}
+.contact-row a:hover b{color:var(--signal)}
+@media (max-width:780px){.contact-row{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding:34px 0 44px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:13.5px;color:var(--mute)}
+.foot .mono{font-size:11px}
+.foot p{max-width:62ch}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker-track{animation:none}
+  .readout .live::before{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="site" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Terrane Geomatics home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 26 L11 11 L16 18 L21 9 L30 26 Z" stroke="#ece6da" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M7.5 21 H24.5" stroke="#ff6a2b" stroke-width="1.8"/>
+        <circle cx="21" cy="9" r="2" fill="#ff6a2b"/>
+      </svg>
+      <b>TERRANE</b>
+      <span>Geomatics</span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#high-country">High Country</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#records">Records</a>
+      <a class="cta" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Introduction">
+  <canvas id="terrain" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="mono kicker reveal">Geomatics · Sierra Nevada, California</p>
+    <h1 class="reveal">Ground truth, from tunnel to <em>summit.</em></h1>
+    <div class="hero-sub">
+      <div class="reveal">
+        <p>Terrane Geomatics delivers survey-grade data for heavy civil, infrastructure and land: drone and laser scanning, precision layout, deformation monitoring, tunnel control and boundary work. Every job is led by a licensed land surveyor.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Scope a project
+            <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a class="btn ghost" href="#services">What we do</a>
+        </div>
+      </div>
+      <div class="readout reveal" aria-label="Base location">
+        <div><span class="live">Base station</span><b>Oakhurst, CA</b></div>
+        <div><span>Lat</span><b>37°20′04″ N</b></div>
+        <div><span>Lon</span><b>119°39′24″ W</b></div>
+        <div><span>Datum</span><b>NAD83(2011)</b></div>
+        <div><span>Scan</span><b id="scanpct">000.0%</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>UAS LiDAR</span><span>Photogrammetry</span><span>Terrestrial laser scanning</span><span>Robotic total stations</span><span>GNSS / RTK</span><span>Digital leveling</span><span>Least-squares adjustment</span><span>Point clouds</span><span>Civil 3D</span><span>ALTA/NSPS</span>
+    <span>UAS LiDAR</span><span>Photogrammetry</span><span>Terrestrial laser scanning</span><span>Robotic total stations</span><span>GNSS / RTK</span><span>Digital leveling</span><span>Least-squares adjustment</span><span>Point clouds</span><span>Civil 3D</span><span>ALTA/NSPS</span>
+  </div>
+</div>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="mono kicker">Services</span>
+        <h2>Six disciplines.<br>One standard of proof.</h2>
+      </div>
+      <p class="reveal">We bring modern sensors to the field and back every number with checks, redundancy and a stamped deliverable. The technology changes; accountability doesn't.</p>
+    </div>
+
+    <div class="services">
+      <article class="svc reveal">
+        <div class="num">01 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="18" y="14" width="12" height="7" rx="1"/><path d="M18 17H6M30 17h12M8 13v8M40 13v8"/><path d="M24 21v4" /><path d="M12 42l12-17 12 17" stroke="#ff6a2b" stroke-dasharray="2 3"/></svg>
+        <h3>Drone &amp; reality capture</h3>
+        <p>UAS LiDAR, photogrammetry and terrestrial scanning turned into clean surfaces, volumes and as-built models, tied to real control.</p>
+        <ul><li>Topo</li><li>Volumes</li><li>Point clouds</li><li>As-builts</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="num">02 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 12h36M6 24h36M6 36h36M12 6v36M24 6v36M36 6v36" opacity=".45"/><rect x="20" y="20" width="8" height="8" stroke="#ff6a2b"/><path d="M24 15v-3M24 36v-3M15 24h-3M36 24h-3" stroke="#ff6a2b"/></svg>
+        <h3>Precision layout</h3>
+        <p>Grid control, anchor bolts, embed plates and structural layout, with as-built verification against design before anyone pours.</p>
+        <ul><li>Grid control</li><li>Embeds</li><li>Anchor bolts</li><li>QA/QC</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="num">03 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 40h38M5 8v32"/><path d="M8 30l7-2 7 1 7-4 7 1 7-3" /><path d="M8 22h36" stroke="#ff6a2b" stroke-dasharray="3 3"/><circle cx="36" cy="26" r="2.2" fill="currentColor"/></svg>
+        <h3>Deformation monitoring</h3>
+        <p>Repeatable epochs on structures, shoring and slopes, with movement checked against tolerance and reported in plain terms contractors can act on.</p>
+        <ul><li>Settlement</li><li>Shoring</li><li>Slopes</li><li>Epoch reports</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="num">04 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 40V24a18 18 0 0136 0v16"/><path d="M14 40V26a10 10 0 0120 0v14" opacity=".45"/><path d="M4 40h40"/><circle cx="24" cy="16" r="2" fill="#ff6a2b" stroke="none"/><path d="M24 18v22" stroke="#ff6a2b" stroke-dasharray="2 3"/></svg>
+        <h3>Tunnel &amp; underground</h3>
+        <p>Portal-to-portal control transfer, alignment and guidance support, profile scans and convergence measurements where GNSS can't reach.</p>
+        <ul><li>Control transfer</li><li>Alignment</li><li>Convergence</li><li>Profiles</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="num">05 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 10l30 4-4 26-24-6z"/><circle cx="8" cy="10" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="38" cy="14" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="34" cy="40" r="2.4" fill="#ff6a2b" stroke="none"/><circle cx="10" cy="34" r="2.4" fill="#ff6a2b" stroke="none"/></svg>
+        <h3>Boundary &amp; ALTA</h3>
+        <p>Hard boundary problems, retracements and ALTA/NSPS Land Title Surveys done the careful way: research first, evidence second, opinion last.</p>
+        <ul><li>ALTA/NSPS</li><li>Retracement</li><li>Records of Survey</li><li>Easements</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="num">06 <i>→</i></div>
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 42l14-22 8 10 7-14 13 26z"/><path d="M32 16V5" stroke="#ff6a2b"/><path d="M28 5h8" stroke="#ff6a2b"/><path d="M10 34c6-3 10 1 16-2s10 0 14-2" opacity=".45"/></svg>
+        <h3>High-country topo &amp; control</h3>
+        <p>Geodetic control networks and topography on ridgelines, summits and remote sites, including packed-in gear, long static sessions and no-signal days.</p>
+        <ul><li>Geodetic control</li><li>Summit topo</li><li>Static GNSS</li><li>Remote sites</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="high pad" id="high-country">
+  <div class="wrap high-grid">
+    <div>
+      <p class="mono kicker reveal">Home ground</p>
+      <h2 class="reveal">Built for granite, grade and thin air.</h2>
+      <p class="lead reveal">We work from the edge of Yosemite, and the Sierra is still our favorite office. Steep terrain, long hikes to the point, weather windows and park rules are part of the job here, not a surcharge on it.</p>
+      <div class="high-list reveal">
+        <div><b>Terrain</b><span>Granite domes, timbered slopes and ridgelines where line of sight is earned.</span></div>
+        <div><b>Logistics</b><span>Pack-in instruments, backup power and long static sessions for remote control.</span></div>
+        <div><b>Agencies</b><span>Comfortable with federal, state and county requirements on public land.</span></div>
+        <div><b>Range</b><span>Foothills to high country, and anywhere in California a project needs us.</span></div>
+      </div>
+    </div>
+    <div class="contour-card reveal" aria-hidden="true">
+      <svg id="contours" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"></svg>
+      <span class="tag" style="left:8%;top:7%">CP-101 · STATIC 4H</span>
+      <span class="tag" style="right:8%;bottom:9%">CI 20 FT · NAVD88</span>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="workflow">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="reveal">
+        <span class="mono kicker">Workflow</span>
+        <h2>Technology where it pays. Judgment everywhere.</h2>
+      </div>
+      <p class="reveal">Faster capture only matters if the data holds up. Every Terrane project runs the same four-step path, from scoping call to signed deliverable.</p>
+    </div>
+    <div class="flow">
+      <div class="step reveal"><div class="rail"></div><span class="mono">01 · Plan</span><h3>Scope to tolerance</h3><p>We start with how the data will be used, then pick the tools and accuracy that fit. No overbuying precision, no guessing.</p></div>
+      <div class="step reveal"><div class="rail"></div><span class="mono">02 · Capture</span><h3>Right sensor, right day</h3><p>Drone, scanner, robot or rod: often a mix, always tied to redundant control you can audit.</p></div>
+      <div class="step reveal"><div class="rail"></div><span class="mono">03 · Adjust</span><h3>Prove it</h3><p>Least-squares adjustment, independent checks and residuals reviewed by a licensed surveyor before anything leaves the office.</p></div>
+      <div class="step reveal"><div class="rail"></div><span class="mono">04 · Deliver</span><h3>Ready to build on</h3><p>Files in your formats, reports your team can read in a minute, and a surveyor who picks up the phone.</p></div>
+    </div>
+    <div class="deliver reveal">
+      <div><b>CAD &amp; surfaces</b><span>Civil 3D, DWG/DXF, LandXML</span></div>
+      <div><b>Reality data</b><span>LAS/LAZ, E57, orthomosaics</span></div>
+      <div><b>Field-ready</b><span>Point files for any total station or GNSS rover</span></div>
+      <div><b>Reports</b><span>Monitoring, as-built and control reports, signed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0" aria-label="Who we work with">
+  <div class="wrap">
+    <p class="mono kicker reveal" style="margin-bottom:26px">Who we work with</p>
+    <div class="sectors reveal">
+      <div class="sector"><b>Contractors</b><span>Heavy civil, structures, tunnels, utilities</span></div>
+      <div class="sector"><b>Agencies</b><span>Water, transportation, parks and public lands</span></div>
+      <div class="sector"><b>Engineers &amp; architects</b><span>Existing conditions and design control</span></div>
+      <div class="sector"><b>Owners &amp; developers</b><span>ALTA, entitlement and site due diligence</span></div>
+      <div class="sector"><b>Title &amp; legal</b><span>Boundary opinions, easements and disputes</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="records pad" id="records">
+  <div class="wrap rec-grid">
+    <div>
+      <p class="mono kicker reveal">Local records</p>
+      <h2 class="reveal">New tools. Deep local records.</h2>
+      <p class="lead reveal">Terrane Geomatics holds the survey records of Jones &amp; Snyder Surveying (1976–2015): maps, field notes and monument history across the Sierra foothills. Those records help us find evidence faster and retrace lines with confidence. Every new survey is our own work, under our own contract.</p>
+    </div>
+    <div class="rec-cards">
+      <div class="rec-card reveal">
+        <span class="mono">Since 2015</span>
+        <p>Terrane Geomatics, Inc. has operated in Oakhurst under new ownership since 2015, doing business locally as Jones Snyder &amp; Associates.</p>
+      </div>
+      <div class="rec-card reveal">
+        <span class="mono">Records requests</span>
+        <p>Need a copy of a historic map or field note? We'll send the copy of record, provided as-is for reference. New reliance requires a new survey.</p>
+        <a href="#contact">Request a copy of record</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <p class="mono kicker reveal">Start a project</p>
+    <h2 class="reveal">Tell us where. We'll get you the ground truth.</h2>
+    <div class="contact-row reveal">
+      <a href="tel:+15596837661"><span class="mono">Call</span><b>559.683.7661</b></a>
+      <a href="mailto:info@terrane.land"><span class="mono">Email</span><b>info@terrane.land</b></a>
+      <div><span class="mono">Base</span><b>Oakhurst, California</b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>© 2026 Terrane Geomatics, Inc. Jones Snyder &amp; Associates is a dba of Terrane Geomatics, Inc. Professional land surveying services under the responsible charge of [Name], PLS [0000].</p>
+    <span class="mono">37°20′04″N 119°39′24″W</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // header solid on scroll
+  var hdr=document.querySelector('header.site');
+  function onScroll(){hdr.classList.toggle('solid', window.scrollY>40);}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // reveal
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // value noise
+  var P=new Uint8Array(512);(function(){var p=[],i,j,t,s=7;for(i=0;i<256;i++)p[i]=i;for(i=255;i>0;i--){s=(s*16807)%2147483647;j=s%(i+1);t=p[i];p[i]=p[j];p[j]=t;}for(i=0;i<512;i++)P[i]=p[i&255];})();
+  function fade(t){return t*t*(3-2*t)}
+  function h2(x,y){return P[P[x&255]+(y&255)]/255}
+  function noise(x,y){var xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=fade(xf),v=fade(yf);
+    var a=h2(xi,yi),b=h2(xi+1,yi),c=h2(xi,yi+1),d=h2(xi+1,yi+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;}
+  function fbm(x,y){var s=0,a=.5,f=1;for(var o=0;o<5;o++){s+=a*noise(x*f,y*f);f*=2.03;a*=.5;}return s;}
+  function height(x,z){ // x in [-1.6,1.6], z in [0,1]
+    var r=Math.abs(1-Math.abs(fbm(x*1.3+3.1,z*1.6+1.7)*2-1)); // ridged
+    var massif=Math.exp(-Math.pow((x-0.25)/0.55,2))*Math.exp(-Math.pow((z-0.72)/0.35,2));
+    return 0.12*fbm(x*2.2,z*2.2)+0.30*r*r*(0.35+z*0.9)+0.55*massif;
+  }
+
+  // hero terrain point cloud
+  var cv=document.getElementById('terrain'),ctx=cv.getContext('2d'),pct=document.getElementById('scanpct');
+  var W,H,dpr,pts=[];
+  function build(){
+    pts=[];var NX=W<700?90:150,NZ=W<700?60:90;
+    for(var j=0;j<NZ;j++){var z=j/(NZ-1);for(var i=0;i<NX;i++){var x=-1.6+3.2*i/(NX-1);pts.push([x,z,height(x,z)]);}}
+  }
+  function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);build();}
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    var cx=W*(W<700?0.5:0.62),hor=H*(W<700?0.50:0.40),sc=Math.max(W*0.62,H*0.9),camH=0.78;
+    var sweep=reduce?0.55:((t*0.00006)%1.25)-0.1;
+    var drift=reduce?0:Math.sin(t*0.00008)*0.06;
+    for(var k=0;k<pts.length;k++){
+      var p=pts[k],x=p[0]+drift,z=p[1],y=p[2];
+      var zc=0.7+z*2.3;
+      var sx=cx+x*sc/zc, sy=hor+(camH-y*1.35)*sc*0.42/zc;
+      if(sx<-4||sx>W+4||sy<-4||sy>H+4)continue;
+      var near=1-z, d=Math.abs(z-sweep);
+      var a=0.22+near*0.6, r=0.8+near*1.3;
+      if(d<0.035){ctx.fillStyle='rgba(255,106,43,'+(0.95-d*18)+')';r+=0.9;}
+      else if(z<sweep){ctx.fillStyle='rgba(236,230,218,'+a+')';}
+      else{ctx.fillStyle='rgba(140,152,158,'+(a*0.6)+')';}
+      ctx.fillRect(sx-r/2,sy-r/2,r,r);
+    }
+    if(pct){var v=Math.max(0,Math.min(1,sweep))*100;pct.textContent=(v<10?'00':v<100?'0':'')+v.toFixed(1)+'%';}
+  }
+  var raf;function loop(t){draw(t);raf=requestAnimationFrame(loop);}
+  size();addEventListener('resize',function(){size();if(reduce)draw(0);});
+  if(reduce)draw(0);else raf=requestAnimationFrame(loop);
+  document.addEventListener('visibilitychange',function(){if(reduce)return;if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(loop);});
+
+  // contour map (marching squares)
+  (function(){
+    var svg=document.getElementById('contours');if(!svg)return;
+    var NX=80,NY=100,g=[],i,j;
+    for(j=0;j<=NY;j++){g[j]=[];for(i=0;i<=NX;i++){var x=i/NX,y=j/NY;
+      var peak=Math.exp(-(Math.pow((x-0.58)/0.24,2)+Math.pow((y-0.38)/0.2,2)));
+      var peak2=Math.exp(-(Math.pow((x-0.25)/0.18,2)+Math.pow((y-0.7)/0.16,2)))*0.55;
+      g[j][i]=peak*0.9+peak2+fbm(x*3+9,y*3+4)*0.35;}}
+    var sx=400/NX,sy=500/NY,out=[];
+    function lerp(a,b,l){return (l-a)/(b-a);}
+    for(var L=0,n=0;L<1.25;L+=0.05,n++){
+      var d='';
+      for(j=0;j<NY;j++)for(i=0;i<NX;i++){
+        var a=g[j][i],b=g[j][i+1],c=g[j+1][i+1],e=g[j+1][i];
+        var idx=(a>L?8:0)|(b>L?4:0)|(c>L?2:0)|(e>L?1:0);if(idx===0||idx===15)continue;
+        var T=[(i+lerp(a,b,L))*sx,j*sy],R=[(i+1)*sx,(j+lerp(b,c,L))*sy],B=[(i+lerp(e,c,L))*sx,(j+1)*sy],Lf=[i*sx,(j+lerp(a,e,L))*sy];
+        var segs={1:[[Lf,B]],2:[[B,R]],3:[[Lf,R]],4:[[T,R]],5:[[Lf,T],[B,R]],6:[[T,B]],7:[[Lf,T]],8:[[Lf,T]],9:[[T,B]],10:[[T,R],[Lf,B]],11:[[T,R]],12:[[Lf,R]],13:[[B,R]],14:[[Lf,B]]}[idx];
+        segs.forEach(function(s){d+='M'+s[0][0].toFixed(1)+' '+s[0][1].toFixed(1)+'L'+s[1][0].toFixed(1)+' '+s[1][1].toFixed(1);});
+      }
+      var idxL=n%5===0;
+      out.push('<path d="'+d+'" stroke="'+(idxL?'#141a1f':'#8b8578')+'" stroke-width="'+(idxL?1.3:0.7)+'" fill="none" opacity="'+(idxL?0.85:0.6)+'"/>');
+    }
+    // control points
+    out.push('<g fill="none" stroke="#d4501a" stroke-width="1.6"><path d="M228 182l9 -16 9 16z"/><circle cx="96" cy="356" r="6"/><path d="M90 356h12M96 350v12"/><circle cx="318" cy="430" r="6"/><path d="M312 430h12M318 424v12"/></g>');
+    out.push('<path d="M237 176L96 356L318 430Z" fill="none" stroke="#d4501a" stroke-width="1" stroke-dasharray="4 4" opacity=".8"/>');
+    svg.innerHTML=out.join('');
+  })();
+})();
+</script>
+</body>
+</html>
