@@ -36,16 +36,22 @@ code{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold)}
 
   <div class="grid">
     <a class="card" href="/">
-      <span class="tag">Current lead</span>
+      <span class="tag">Master design</span>
       <h2>Terrane Geomatics</h2>
       <p>The forward-looking brand for heavy civil, agency and engineering clients: monitoring, tunnels, embed layout, drone and LiDAR, and the 1870 corner story.</p>
       <span class="go">Open Terrane site →</span>
     </a>
     <a class="card" href="/jsa/">
-      <span class="tag">Current lead</span>
+      <span class="tag">Short-term plan</span>
       <h2>Jones Snyder &amp; Associates</h2>
-      <p>The established local brand, now marked "A Terrane Geomatics company." For residential, boundary, realtor and title clients and recorded-map requests.</p>
+      <p>The Terrane site design with the JSA logo and "A Terrane Geomatics company." This is the version planned for jssurveying.com for now. It is built automatically from the Terrane page.</p>
       <span class="go">Open JSA site →</span>
+    </a>
+    <a class="card" href="/archive/jsa-v3/">
+      <span class="tag old">Archived</span>
+      <h2>JSA homepage v3</h2>
+      <p>The earlier JSA redesign with the light sections and the original layout. Kept for comparison.</p>
+      <span class="go">Open JSA v3 →</span>
     </a>
     <a class="card" href="/archive/terrane-granite/">
       <span class="tag old">Archived</span>
@@ -56,7 +62,7 @@ code{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold)}
   </div>
 
   <div class="notes">
-    <div><b>The plan for now</b>Run both sites. JSA keeps local name recognition and the phone ringing; Terrane carries the technical work. Each links to the other in its footer.</div>
+    <div><b>The plan for now</b>Launch the Terrane design on jssurveying.com under the JSA name. Edit index.html only, then run <code>python3 build-jsa.py</code> to regenerate the JSA page so the two never drift apart.</div>
     <div><b>Going back</b>Every change is a git commit, and Netlify keeps every deploy. The Terrane site as it stood before both sites were combined is commit <code>38c28bc</code>.</div>
     <div><b>Before launch</b>All pages are set to noindex. Remove that, add redirects from the current jssurveying.com pages, and set up the contact forms on launch day.</div>
   </div>

@@ -4,312 +4,516 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Jones Snyder &amp; Associates | Land Surveyors, Oakhurst CA</title>
+<title>Jones Snyder &amp; Associates | Land Surveying &amp; Mapping, Oakhurst CA</title>
+<meta name="description" content="Jones Snyder &amp; Associates: land surveying &amp; mapping services. Drone and laser scanning, precision layout, deformation monitoring, tunnel surveys, boundary and ALTA surveys, and high-country control. Licensed land surveyors at Yosemite's South Entrance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-body{margin:0}
-a{color:#C9A04E}a:hover{color:#E2BE73}
-.navlinks{display:flex}
-@media (max-width: 900px){.navlinks{display:none}.navphone{display:none}.hero-h1{font-size:64px !important}.h2{font-size:44px !important}}
+:root{
+  --navy:#0F1E36; --navy-2:#14294B; --navy-line:#23385C; --navy-line-2:#2C436B;
+  --gold:#C9A04E; --gold-hi:#E2BE73;
+  --paper:#F3F2EE; --white:#FFFFFF; --rule:#DCDFE5; --rule-2:#C9CFD9;
+  --ink:#0F1E36; --ink-2:#3B4A63; --steel:#4A6290; --mist:#C7CFDC; --mist-2:#9FB0C9;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Archivo,"Helvetica Neue",sans-serif;color:var(--ink);background:var(--navy);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--gold)} a:hover{color:var(--gold-hi)}
+.w{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.cond{font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:.95}
+h1,h2,h3,p{margin:0}
+.h2{font-size:64px}
+.btn{text-decoration:none;font-size:15px;font-weight:700;font-stretch:88%;letter-spacing:.12em;text-transform:uppercase;padding:0 26px;min-height:54px;display:inline-flex;align-items:center;gap:10px}
+.btn-gold{background:var(--gold);color:var(--navy)} .btn-gold:hover{background:var(--gold-hi);color:var(--navy)}
+.btn-line{border:1.5px solid var(--paper);color:var(--paper)} .btn-line:hover{background:var(--paper);color:var(--navy)}
+section{position:relative}
+.pad{padding-top:104px;padding-bottom:104px}
+
+/* header */
+header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);position:sticky;top:0;z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--paper)}
+.brand:hover{color:var(--paper)}
+.brand svg{width:44px;height:44px;flex:none}
+.brand .name{display:flex;flex-direction:column;line-height:1}
+.brand b{font-size:27px;font-weight:800;font-stretch:72%;letter-spacing:.2em}
+.brand small{font-family:var(--mono);font-size:10.5px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-top:5px}
+.nav{display:flex;gap:30px;align-items:center;font-size:14px;font-weight:600;font-stretch:88%;letter-spacing:.14em;text-transform:uppercase}
+.nav a{color:var(--mist);text-decoration:none} .nav a:hover{color:var(--paper)}
+.bar-r{display:flex;align-items:center;gap:20px}
+.phone{color:var(--paper);text-decoration:none;font-family:var(--mono);font-size:14px;font-weight:500}
+.quote{background:var(--gold);color:var(--navy);text-decoration:none;font-size:14px;font-weight:700;font-stretch:88%;letter-spacing:.12em;text-transform:uppercase;padding:0 20px;min-height:46px;display:inline-flex;align-items:center}
+.quote:hover{background:var(--gold-hi);color:var(--navy)}
+
+/* hero */
+.hero{min-height:780px;color:var(--paper);display:flex;align-items:flex-end;overflow:hidden}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,40,.45) 0%,rgba(11,22,40,.55) 55%,rgba(11,22,40,.82) 100%)}
+.hero .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,160,78,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,78,.10) 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 70%,transparent 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%,#000 70%,transparent 100%)}
+.hero .sweep{position:absolute;left:0;right:0;top:0;height:2px;background:var(--gold);box-shadow:0 0 18px 4px rgba(201,160,78,.55);opacity:.85;animation:sweep 7s cubic-bezier(.45,0,.55,1) infinite}
+.hero .sweep::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:120px;background:linear-gradient(0deg,rgba(201,160,78,.16),transparent)}
+@keyframes sweep{0%{transform:translateY(-130px)}100%{transform:translateY(900px)}}
+.hero .in{position:relative;width:100%;padding-top:120px;padding-bottom:72px;display:flex;flex-direction:column;gap:28px}
+.hero .kick{color:#D6DDE8}
+.hero h1{font-size:112px;max-width:980px;font-weight:800;font-stretch:72%;line-height:.9;text-transform:uppercase}
+.hero h1 span{color:var(--gold)}
+.hero p.lead{font-size:21px;line-height:1.55;color:#E3E7EE;max-width:660px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:14px}
+.hero .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.readout{font-family:var(--mono);font-size:12px;color:var(--mist);border:1px solid rgba(201,160,78,.45);background:rgba(11,22,40,.55);padding:12px 16px;display:grid;grid-template-columns:auto auto;gap:4px 22px}
+.readout b{font-weight:500;color:var(--paper);text-align:right}
+.readout .on{color:var(--gold)}
+.readout .on::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:1px;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+.cap{font-family:var(--mono);font-size:12px;color:var(--mist);max-width:320px;text-align:right}
+
+/* stats */
+.stats{background:var(--navy-2);color:var(--paper);border-bottom:1px solid var(--navy-line)}
+.stats .w{padding-top:44px;padding-bottom:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:32px}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat b{font-size:52px;font-weight:800;font-stretch:72%;line-height:1;color:var(--gold)}
+.stat span{font-size:15px;line-height:1.45;color:var(--mist)}
+
+/* services */
+.svc-sec{background:var(--paper)}
+.head{display:flex;flex-direction:column;gap:16px;max-width:860px;margin-bottom:52px}
+.head .mono{color:var(--steel)}
+.head p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.svcs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.svc{background:var(--white);border:1px solid var(--rule);display:flex;flex-direction:column}
+.svc img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.svc .body{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.svc .tag{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);display:flex;justify-content:space-between;gap:12px}
+.svc .tag em{font-style:normal;color:#8A6A24}
+.svc h3{font-size:30px;font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:1}
+.svc p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.svc .spec{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:12.5px;color:var(--ink)}
+@media (max-width:980px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.svcs{grid-template-columns:1fr}}
+
+/* tech */
+.tech{background:var(--navy);color:var(--paper)}
+.tech .w{display:flex;flex-wrap:wrap;gap:64px;align-items:center}
+.tech .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.tech .txt .mono{color:var(--mist-2)}
+.tech h2 span{color:var(--gold)}
+.tech p.lead{font-size:19px;line-height:1.6;color:var(--mist)}
+.quad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px;border-top:1px solid var(--navy-line-2);padding-top:26px}
+.quad b{display:block;font-size:17px;font-weight:750;margin-bottom:6px}
+.quad span{font-size:15px;line-height:1.5;color:var(--mist)}
+.quad .t b{color:var(--gold)}
+.cloud{flex:1 1 380px;max-width:540px;width:100%;aspect-ratio:1/1;position:relative;border:1px solid var(--navy-line-2);background:radial-gradient(120% 90% at 50% 100%,#14294B 0%,#0B1628 70%);min-width:0}
+.cloud canvas{position:absolute;inset:0;width:100%;height:100%}
+.cloud .lbl{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mist);background:rgba(11,22,40,.75);border:1px solid var(--navy-line-2);padding:6px 9px}
+.cloud .lbl b{color:var(--gold);font-weight:500}
+
+.caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--navy)}
+.caps img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.tech .side{flex:1 1 380px;max-width:540px;width:100%;min-width:0;display:flex;flex-direction:column}
+.tech .side .cloud{max-width:none;flex:none}
+.story-card{background:var(--navy-2);border:1px solid var(--navy-line-2);border-top:none;color:var(--paper);padding:26px 26px 24px;display:flex;flex-direction:column;gap:14px}
+.story-card .yr{font-size:84px;font-weight:800;font-stretch:72%;line-height:.85;color:var(--gold)}
+.story-card p{font-size:16px;line-height:1.6;color:var(--mist)}
+.story-card .mono{font-size:11.5px;color:var(--gold);border-top:1px solid var(--navy-line-2);padding-top:12px}
+.tech .txt p.lead + p.lead{margin-top:-10px}
+/* projects */
+.proj-sec{background:var(--white)}
+.projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:40px 28px}
+.proj{display:flex;flex-direction:column;gap:14px}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.proj .mono{font-size:12px;letter-spacing:.1em;color:var(--steel)}
+.proj h3{font-size:25px;font-weight:750;font-stretch:88%;line-height:1.15}
+.proj p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.proj.dark{background:var(--navy);color:var(--paper);padding:32px;justify-content:flex-end;min-height:360px}
+.proj.dark .mono{color:var(--gold)} .proj.dark p{color:var(--mist)}
+
+/* clients */
+.clients{background:var(--paper);border-top:1px solid var(--rule)}
+.clients .w{padding-top:64px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.clients .mono{color:var(--steel)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--rule-2);border-left:1px solid var(--rule-2)}
+.cgrid div{border-right:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);padding:24px 20px;display:flex;flex-direction:column;gap:6px}
+.cgrid b{font-size:20px;font-weight:750;font-stretch:88%}
+.cgrid span{font-size:14px;color:var(--ink-2)}
+
+/* how */
+.how{background:var(--paper);border-top:1px solid var(--rule)}
+.how .w{display:flex;flex-wrap:wrap-reverse;gap:64px;align-items:center}
+.how img{flex:1 1 380px;max-width:520px;width:100%;aspect-ratio:1/1;object-fit:cover;min-width:0}
+.how .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:26px}
+.how .mono{color:var(--steel)}
+.how p{font-size:19px;line-height:1.6;color:var(--ink-2)}
+.how .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;border-top:1px solid var(--rule-2);padding-top:20px;font-family:var(--mono);font-size:13px;color:var(--steel)}
+
+/* records */
+.rec{background:var(--navy-2);color:var(--paper)}
+.rec .mono.k{color:var(--mist-2)}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:stretch;margin-top:48px}
+.rcard{margin:0;background:var(--navy);border:1px solid var(--navy-line-2);display:flex;flex-direction:column}
+.rcard figcaption{padding:22px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.rcard figcaption b{font-size:18px;font-weight:750}
+.rcard figcaption span{font-size:15px;line-height:1.55;color:var(--mist)}
+.rlight{background:var(--paper);color:var(--ink);padding:32px 30px;display:flex;flex-direction:column;gap:18px;justify-content:flex-end}
+.rlight .mono{font-size:12px;letter-spacing:.1em;color:#8A6A24}
+.rlight .t{font-size:30px}
+.rlight p{font-size:16px;line-height:1.6;color:var(--ink-2)}
+.rlight a{color:var(--ink);font-size:15px;font-weight:700;text-underline-offset:6px}
+
+/* yosemite */
+.yos{min-height:640px;color:var(--paper);display:flex;align-items:center;overflow:hidden}
+.yos > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yos .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,22,40,.78) 0%,rgba(11,22,40,.5) 60%,rgba(11,22,40,.25) 100%)}
+.yos .in{position:relative;width:100%;padding-top:96px;padding-bottom:96px;display:flex;flex-direction:column;gap:24px}
+.yos .mono{color:#D6DDE8}
+.yos h2{max-width:860px} .yos h2 span{color:var(--gold)}
+.yos p{font-size:19px;line-height:1.6;color:#E3E7EE;max-width:660px}
+
+/* cta */
+.cta{background:var(--gold);color:var(--navy)}
+.cta .w{padding-top:72px;padding-bottom:72px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px}
+.cta h2{font-size:56px;max-width:720px}
+.cta .btn-navy{background:var(--navy);color:var(--paper)} .cta .btn-navy:hover{background:var(--navy-2);color:var(--paper)}
+.cta .btn-out{border:1.5px solid var(--navy);color:var(--navy);font-family:var(--mono);font-weight:500;letter-spacing:0;text-transform:none}
+
+/* footer */
+footer{background:var(--navy);color:var(--mist)}
+footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:column;gap:40px}
+.ftop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px}
+.fcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;flex:0 1 680px;font-size:15px;line-height:1.7}
+.fcols .mono{font-size:12px;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+.fcols a{color:#E9ECF2;text-decoration:none}
+.ftop .brand{align-self:flex-start}
+.tagline{font-style:normal;font-size:14px;color:var(--mist);margin-top:12px;letter-spacing:0}
+.fbot{border-top:1px solid var(--navy-line);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:#8E9DB6}
+.fbot .mono{font-size:13px;letter-spacing:0;text-transform:none}
+
+@media (max-width:900px){
+  .nav,.phone{display:none}
+  .hero h1{font-size:64px}
+  .h2{font-size:44px}
+  .cta h2{font-size:42px}
+  .hero{min-height:720px}
+  .cap{text-align:left}
+  .brand b{font-size:23px}
+}
+@media (max-width:420px){.q-full{display:none}.quote{padding:0 14px;font-size:12.5px}.brand svg{width:38px;height:38px}}
+@media (prefers-reduced-motion:reduce){.hero .sweep{animation:none;display:none}.readout .on::before{animation:none}html{scroll-behavior:auto}}
+.jsa-lockup{display:flex;flex-direction:column;gap:7px}
+.jsa-logo{height:44px;width:auto;display:block}
+.jsa-endorse{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9FB0C9;line-height:1}
+.jsa-lockup .tagline{margin-top:4px}
+@media (max-width:420px){.jsa-logo{height:36px}.jsa-endorse{font-size:8.5px}}
 </style>
 </head>
 <body>
-<div id="top" style="width: 100%; overflow-x: hidden; font-family: Archivo, 'Helvetica Neue', sans-serif; color: #0F1E36; background: #0F1E36;">
 
-<!-- NAV -->
-<header style="background: #0F1E36; border-bottom: 1px solid #23385C;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
-<a href="#top" aria-label="Jones Snyder &amp; Associates home" style="display: flex; align-items: center; text-decoration: none;">
-<span style="display: flex; flex-direction: column; gap: 7px;"><img src="jsa-logo.svg" alt="Jones Snyder &amp; Associates" style="height: 46px; width: auto; display: block;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #9FB0C9;">A Terrane Geomatics company</span></span>
-</a>
-<nav class="navlinks" aria-label="Main" style="gap: 32px; align-items: center; font-size: 14px; font-weight: 600; font-stretch: 88%; letter-spacing: 0.14em; text-transform: uppercase;">
-<a href="#projects" style="color: #C7CFDC; text-decoration: none;">Projects</a>
-<a href="#services" style="color: #C7CFDC; text-decoration: none;">Services</a>
-<a href="#about" style="color: #C7CFDC; text-decoration: none;">About</a>
-<a href="#contact" style="color: #C7CFDC; text-decoration: none;">Contact</a>
-</nav>
-<div style="display: flex; align-items: center; gap: 20px;">
-<a class="navphone" href="tel:5596837661" style="color: #F3F2EE; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 500;">559.683.7661</a>
-<a href="#contact" style="background: #C9A04E; color: #0F1E36; text-decoration: none; font-size: 14px; font-weight: 700; font-stretch: 88%; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 20px; min-height: 46px; display: inline-flex; align-items: center;">Request a Quote</a>
-</div>
-</div>
+<header class="site" id="top">
+  <div class="w bar">
+    <a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><span class="jsa-lockup"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"><span class="jsa-endorse">A Terrane Geomatics company</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#records">Records</a>
+    </nav>
+    <div class="bar-r">
+      <a class="phone" href="tel:5596837661">559.683.7661</a>
+      <a class="quote" href="#contact"><span class="q-full">Request a&nbsp;</span>Quote</a>
+    </div>
+  </div>
 </header>
 
-<!-- HERO -->
-<section style="position: relative; min-height: 760px; color: #F3F2EE; display: flex; align-items: flex-end;">
-<img src="../img/hero-alpine-lake.jpg" alt="Survey tripods, rods and instrument cases loaded in an aluminum boat crossing a remote alpine lake toward snow-dusted peaks at dawn" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
-<div style="position: absolute; inset: 0; background: rgba(11, 22, 40, 0.58);"></div>
-<div style="position: relative; width: 100%; max-width: 1240px; margin: 0 auto; padding: 120px 24px 72px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #D6DDE8; text-transform: uppercase;">Land surveyors · Oakhurst, California</div>
-<h1 class="hero-h1" style="margin: 0; font-size: 112px; line-height: 0.9; font-weight: 800; font-stretch: 72%; text-transform: uppercase; max-width: 900px;">Precise work<br><span style="color: #C9A04E;">in difficult places.</span></h1>
-<p style="margin: 0; font-size: 21px; line-height: 1.55; color: #E3E7EE; max-width: 640px;">From original 1800s section corners on remote ranches to construction layout held to hundredths of a foot. Licensed land surveyors based in Oakhurst, at Yosemite's South Entrance.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px;">
-<a href="#contact" style="background: #C9A04E; color: #0F1E36; text-decoration: none; font-size: 15px; font-weight: 700; font-stretch: 88%; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 26px; min-height: 54px; display: inline-flex; align-items: center; gap: 10px;">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a href="#projects" style="border: 1.5px solid #F3F2EE; color: #F3F2EE; text-decoration: none; font-size: 15px; font-weight: 700; font-stretch: 88%; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 26px; min-height: 54px; display: inline-flex; align-items: center;">View projects</a>
-</div>
-<div style="align-self: flex-end; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #C7CFDC; text-align: right; max-width: 320px;">Crossing a remote alpine lake to recover original section corners.</div>
-</div>
+<main>
+<section class="hero" aria-label="Introduction">
+  <img src="../img/hero-alpine-lake.jpg" alt="Survey tripods, rods and instrument cases loaded in an aluminum boat crossing a remote alpine lake toward snow-dusted peaks at dawn">
+  <div class="shade"></div>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="sweep" aria-hidden="true"></div>
+  <div class="w in">
+    <div class="mono kick">Land surveying &amp; mapping services</div>
+    <h1>The jobs other<br><span>surveyors pass on.</span></h1>
+    <p class="lead">Mountaintops, tunnels, 5,000-acre ranches and century-old corners. Licensed land surveyors who take on the hard jobs and get them right.</p>
+    <div class="acts">
+      <a class="btn btn-gold" href="#contact">Request a Quote <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="#services">Our services</a>
+    </div>
+    <div class="foot">
+      <div class="readout" aria-label="Office location">
+        <span class="on">Base</span><b>Sierra Nevada, CA</b>
+        <span>Lat</span><b>37°20′04″ N</b>
+        <span>Lon</span><b>119°39′24″ W</b>
+      </div>
+      <div class="cap">Crossing a remote alpine lake to recover original section corners.</div>
+    </div>
+  </div>
 </section>
 
-<!-- STATS -->
-<section aria-label="By the numbers" style="background: #14294B; color: #F3F2EE; border-bottom: 1px solid #23385C;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 44px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px;">
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 52px; font-weight: 800; font-stretch: 72%; line-height: 1; color: #C9A04E;">14,800+</div><div style="font-size: 15px; line-height: 1.45; color: #C7CFDC;">surveys in the records we hold</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 52px; font-weight: 800; font-stretch: 72%; line-height: 1; color: #C9A04E;">0.005 ft</div><div style="font-size: 15px; line-height: 1.45; color: #C7CFDC;">(1/16″) reporting threshold on a monitored retaining wall</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 52px; font-weight: 800; font-stretch: 72%; line-height: 1; color: #C9A04E;">½ mile+</div><div style="font-size: 15px; line-height: 1.45; color: #C7CFDC;">of tunnel laid out, and still advancing</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 52px; font-weight: 800; font-stretch: 72%; line-height: 1; color: #C9A04E;">PLS</div><div style="font-size: 15px; line-height: 1.45; color: #C7CFDC;">in responsible charge of every job</div></div>
-</div>
+<section class="stats" aria-label="By the numbers">
+  <div class="w">
+    <div class="stat"><b>50 yrs</b><span>of local survey records</span></div>
+    <div class="stat"><b>1870</b><span>oldest original corner we've recovered</span></div>
+    <div class="stat"><b>11,000′</b><span>summit control on Mammoth Mountain</span></div>
+    <div class="stat"><b>Tunnels</b><span>underground control in an active decline</span></div>
+    <div class="stat"><b>1/16″</b><span>movement we flag on monitored structures</span></div>
+  </div>
 </section>
 
-<!-- THE RANGE -->
-<section id="services" style="background: #F3F2EE; color: #0F1E36;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 52px;">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #4A6290; text-transform: uppercase;">The range</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">From 1800s stones to hundredths of a foot.</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3B4A63;">Our work runs from original GLO corners found hundreds of feet from their record position to construction layout that has to land within a hundredth of a foot.</p>
-</div>
-
-<div style="background: #FFFFFF; border: 1px solid #DCDFE5; padding: 36px 32px 30px; display: flex; flex-direction: column; gap: 18px;">
-<div style="display: flex; justify-content: space-between; gap: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #4A6290; text-transform: uppercase;"><span>Archaeology</span><span>Engineering</span></div>
-<div style="position: relative; height: 4px; background: #14294B; margin: 14px 0;">
-<span style="position: absolute; left: 0; top: -9px; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; border: 4px solid #14294B; box-sizing: border-box;"></span>
-<span style="position: absolute; left: calc((100% + 24px) * 0.25); top: -9px; width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; border: 4px solid #14294B; box-sizing: border-box;"></span>
-<span style="position: absolute; left: calc((100% + 24px) * 0.5); top: -9px; width: 22px; height: 22px; border-radius: 50%; background: #C9A04E; border: 4px solid #14294B; box-sizing: border-box;"></span>
-<span style="position: absolute; left: calc((100% + 24px) * 0.75); top: -9px; width: 22px; height: 22px; border-radius: 50%; background: #C9A04E; border: 4px solid #14294B; box-sizing: border-box;"></span>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 30px; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">100s of feet</div><div style="font-size: 15px; line-height: 1.5; color: #3B4A63;">Original 1800s section corners, found far from their record position.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 30px; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">Ranch &amp; ALTA</div><div style="font-size: 15px; line-height: 1.5; color: #3B4A63;">Boundary, records of survey and ALTA surveys on 1,000 to 5,000+ acres.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 30px; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">&lt; 0.01 ft</div><div style="font-size: 15px; line-height: 1.5; color: #3B4A63;">Precision construction layout for treatment plants, tunnels and buildings.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 30px; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">0.005 ft</div><div style="font-size: 15px; line-height: 1.5; color: #3B4A63;">Deformation monitoring of structures during heavy civil construction.</div></div>
-</div>
-</div>
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<img src="../img/cadastral-cap.jpg" alt="Weathered Bureau of Land Management cadastral survey cap among leaves and rocks" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A6290;">Recovered cadastral corner</figcaption>
-</figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<img src="../img/scanner-happy-isles.jpg" alt="Leica laser scanner on a tripod on a wooden footbridge in Yosemite" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A6290;">Leica scanner, Happy Isles, Yosemite</figcaption>
-</figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px;">
-<img src="../img/drone-orchard.jpg" alt="Survey drone on an orange landing pad beside an orchard" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A6290;">Drone mapping: orthophotos and 3D surface models</figcaption>
-</figure>
-<div style="background: #0F1E36; color: #F3F2EE; padding: 32px; display: flex; flex-direction: column; gap: 18px; justify-content: center;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #C9A04E; text-transform: uppercase;">What we do</div>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 17px; font-weight: 600;">
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Boundary, ROS &amp; ALTA/NSPS surveys</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Construction layout &amp; control</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Deformation monitoring</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Drone mapping, orthophotos &amp; 3D models</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">3D laser scanning</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Topographic mapping &amp; GIS</li>
-<li style="border-top: 1px solid #2C436B; padding-top: 10px;">Expert witness, boundary disputes</li>
-</ul>
-</div>
-</div>
-</div>
+<section class="tech pad" id="approach">
+  <div class="w">
+    <div class="txt">
+      <div class="mono">Archaeology meets high tech</div>
+      <h2 class="h2 cond">Old notes.<br><span>New eyes.</span></h2>
+      <p class="lead">The surveyors before us measured this ground with chains and transits, across terrain that's hard going even with modern gear. Their work still holds, and our respect for it is unwavering.</p>
+      <p class="lead">Today we carry GNSS, drones and precision total stations. The tools are new; the fundamentals aren't. We still read the old notes, follow the evidence and dig where it points. The technology helps us focus where it counts.</p>
+      <div class="quad">
+        <div><b>Archaeology</b><span>Digging for stones, pipes and bearing trees set more than a century ago.</span></div>
+        <div><b>History</b><span>Original government field notes, old deeds and decades of local survey records.</span></div>
+        <div><b>Math</b><span>Least-squares adjustments, proportioning and closures we can defend.</span></div>
+        <div class="t"><b>Technology</b><span>GNSS, drones, laser scanners and precision total stations, turned into models clients can use.</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="cloud" aria-label="Animated point cloud of a mountain scan">
+      <canvas id="cloud"></canvas>
+      <span class="lbl" style="left:14px;top:14px">SCAN <b id="pct">000%</b></span>
+      <span class="lbl" style="right:14px;bottom:14px">PTS <b id="pts">0</b></span>
+    </div>
+      <aside class="story-card">
+        <div class="yr">1870</div>
+        <p>The original field notes described the ground along a section line. We matched those calls to a LiDAR model of the terrain, narrowed the search, and recovered a section corner no one had seen since 1870.</p>
+        <div class="mono">Old notes + LiDAR = found corner</div>
+      </aside>
+    </div>
+  </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" style="background: #FFFFFF; color: #0F1E36;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px;">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 820px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #4A6290; text-transform: uppercase;">Recent work</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">Selected projects.</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 40px 28px;">
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/prism-vernal-fall.jpg" alt="Orange survey prism above Vernal Fall with granite cliffs behind" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Yosemite National Park · Laser scanning</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Vernal Fall to Curry Village</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Topographic survey from the top of Vernal Fall down to Lady Franklin Rock, through Happy Isles and along the road back to Curry Village, captured with a Leica laser scanner.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/total-station-trail.jpg" alt="Robotic total station set up on a trail beside a wooden fence and granite boulders" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Yosemite National Park · Design &amp; layout</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Bridalveil Fall accessible trails</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">All of the topographic surveying, mapping and construction layout for the Bridalveil Fall trails and overlooks.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo working at the lit heading, survey paint marks on the rib and a ventilation duct overhead" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Underground · Line &amp; grade</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Decline tunnel layout</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Line and grade for an underground decline that's now more than half a mile long and still advancing.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/treatment-plant.jpg" alt="Precast concrete treatment plant building under construction with a mobile crane, in the Merced River canyon at El Portal" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Heavy civil · Yosemite</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">El Portal &amp; Tuolumne Meadows treatment plants</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Control and construction layout for two Yosemite wastewater plants, including structural steel and precast buildings, plus structural deformation monitoring with a 0.005 ft (1/16″) reporting threshold.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/ranch-rock-wall.jpg" alt="Oak woodland pasture with an old rock wall running across green grass" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Agricultural · ROS &amp; ALTA</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">5,000-acre ranch</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Record of survey and ALTA survey to support a major ranch transaction, one of many large-acreage ALTAs we've delivered across California.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/section-corner-poster.jpg" alt="Yellow Forest Service location poster nailed to a tree, marking a section corner" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Boundary · Retracement</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">1,000-acre ranch, original corners</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Original GLO section corners recovered across a thousand acres, then intermediate points set along the property lines to guide new fencing.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/boat-lake.jpg" alt="Survey gear in the bow of a boat on a mountain lake at sunrise" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Remote · Drone 3D</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Across an alpine lake</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">By boat to recover old section corners on the far shore, then a drone flight for a 3D model and orthophoto of the site.</p>
-</article>
-
-<article style="display: flex; flex-direction: column; gap: 14px;">
-<img src="../img/research-post.jpg" alt="Numbered measurement post at an ecological research site" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A6290;">Science · Field sites</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Ecological observatory field sites</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Surveys at long-term ecological research sites from California to Oregon and Virginia, for a national science program.</p>
-</article>
-
-<article style="background: #0F1E36; color: #F3F2EE; padding: 32px; display: flex; flex-direction: column; gap: 14px; justify-content: flex-end; min-height: 360px; box-sizing: border-box;">
-<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A04E" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 006 0L7 7zM17 7l-3 7a3 3 0 006 0l-3-7zM8 21h8"></path></svg>
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #C9A04E;">Legal · Expert witness</div>
-<h3 style="margin: 0; font-size: 25px; font-weight: 750; font-stretch: 88%; line-height: 1.15;">Contentious boundary disputes</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #C7CFDC;">Expert witness work on complicated boundary cases, where the history, the evidence and the math all have to hold up.</p>
-</article>
-
-</div>
-</div>
+<section class="svc-sec pad" id="services">
+  <div class="w">
+    <div class="head">
+      <div class="mono">What we do</div>
+      <h2 class="h2 cond">From 1800s stones to millimeter scans.</h2>
+      <p>That mix of history and technology runs through everything we do, from a single corner to a year of monitoring on a heavy civil job.</p>
+    </div>
+    <div class="svcs">
+      <article class="svc">
+        <img src="../img/drone-orchard.jpg" alt="Survey drone on an orange landing pad beside an orchard" loading="lazy">
+        <div class="body">
+          <div class="tag">Reality capture</div>
+          <h3>Drone &amp; laser scanning</h3>
+          <p>Drone LiDAR and photogrammetry, laser scanning, orthophotos and 3D surfaces, all tied to real survey control.</p>
+          <div class="spec">Point clouds · Orthos · Volumes · As-builts</div>
+        </div>
+      </article>
+      <article class="svc">
+        <img src="../img/anchor-bolts-prism.jpg" alt="Mini survey prism held over anchor bolts on a steel base plate in a block wall" loading="lazy" style="object-position:50% 72%">
+        <div class="body">
+          <div class="tag">Construction</div>
+          <h3>Precision layout</h3>
+          <p>Control, grid lines, anchor bolts and embed plates for plants, structures and buildings, with as-built checks before the pour.</p>
+          <div class="spec">Held to &lt; 0.01 ft</div>
+        </div>
+      </article>
+      <article class="svc">
+        <img src="../img/treatment-plant.jpg" alt="Precast treatment plant building under construction with a crane in the Merced River canyon" loading="lazy">
+        <div class="body">
+          <div class="tag">Heavy civil</div>
+          <h3>Deformation monitoring</h3>
+          <p>Repeat epochs on structures, walls and slopes during construction, compared to tolerance and reported so crews can act the same day.</p>
+          <div class="spec">0.005 ft reporting threshold</div>
+        </div>
+      </article>
+      <article class="svc">
+        <img src="../img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo working at the lit heading" loading="lazy">
+        <div class="body">
+          <div class="tag">Underground</div>
+          <h3>Tunnel surveys</h3>
+          <p>Control carried underground, line and grade at the heading, and scans of the excavated profile where GNSS can't follow.</p>
+          <div class="spec">½ mile+ of decline and advancing</div>
+        </div>
+      </article>
+      <article class="svc">
+        <img src="../img/glo-notes-1880.jpg" alt="Handwritten original government survey field notes dated March 22, 1880" loading="lazy" style="object-position:50% 35%">
+        <div class="body">
+          <div class="tag">Boundary <em>Still our favorite</em></div>
+          <h3>Boundary &amp; ALTA surveys</h3>
+          <p>Hard boundary problems, original 1800s government corners, records of survey and ALTA/NSPS surveys on 1,000 to 5,000+ acres. Expert witness work, too.</p>
+          <div class="spec">Research · Evidence · Defensible math</div>
+        </div>
+      </article>
+      <article class="svc">
+        <img src="../img/mammoth-gnss.jpg" alt="GNSS receiver on the summit of Mammoth Mountain with the Minarets and snowy Sierra peaks behind" loading="lazy" style="object-position:30% 50%">
+        <div class="body">
+          <div class="tag">High country</div>
+          <h3>Mountaintop topo &amp; control</h3>
+          <p>Geodetic control and topography on ridges, summits and remote sites: packed-in gear, long static sessions and no cell service.</p>
+          <div class="spec">Static GNSS · Remote control networks</div>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<!-- CLIENTS -->
-<section aria-label="Clients" style="background: #F3F2EE; color: #0F1E36; border-top: 1px solid #DCDFE5;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px; display: flex; flex-direction: column; gap: 28px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #4A6290; text-transform: uppercase;">Who we work for</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid #C9CFD9; border-left: 1px solid #C9CFD9;">
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">Federal &amp; county agencies</span><span style="font-size: 14px; color: #3B4A63;">National parks, counties and public utilities</span></div>
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">National contractors</span><span style="font-size: 14px; color: #3B4A63;">Heavy civil, treatment plants and underground</span></div>
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">Institutional ag investors</span><span style="font-size: 14px; color: #3B4A63;">Large-acreage ALTA surveys across California</span></div>
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">Architects &amp; engineers</span><span style="font-size: 14px; color: #3B4A63;">Design surveys, topo and construction support</span></div>
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">Research programs</span><span style="font-size: 14px; color: #3B4A63;">Ecological field sites in three states</span></div>
-<div style="border-right: 1px solid #C9CFD9; border-bottom: 1px solid #C9CFD9; padding: 24px 20px; display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 20px; font-weight: 750; font-stretch: 88%;">Landowners &amp; attorneys</span><span style="font-size: 14px; color: #3B4A63;">Boundaries, ranches and expert witness work</span></div>
-</div>
-</div>
+
+<section class="proj-sec pad" id="projects">
+  <div class="w">
+    <div class="head">
+      <div class="mono">Recent work</div>
+      <h2 class="h2 cond">Selected projects.</h2>
+    </div>
+    <div class="projs">
+      <article class="proj"><img src="../img/prism-vernal-fall.jpg" alt="Orange survey prism above Vernal Fall with granite cliffs behind" loading="lazy"><div class="mono">Yosemite National Park · Laser scanning</div><h3>Happy Isles &amp; Vernal Fall</h3><p>Topographic survey from the top of Vernal Fall down to Lady Franklin Rock, through Happy Isles and along the road back to Curry Village, captured with a 3D laser scanner.</p></article>
+      <article class="proj"><img src="../img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo at the heading and survey paint marks on the rib" loading="lazy"><div class="mono">Sierra foothills · Underground</div><h3>Exploration mine decline</h3><p>Boundary survey and mapping on federal land, then line and grade and routine as-builts underground. The decline is more than half a mile long, tracks its design along its full length, and stays entirely within its permitted boundaries.</p></article>
+      <article class="proj"><img src="../img/treatment-plant.jpg" alt="Precast treatment plant building under construction with a mobile crane at El Portal" loading="lazy"><div class="mono">Heavy civil · Yosemite</div><h3>El Portal &amp; Tuolumne Meadows treatment plants</h3><p>Control and construction layout for a national contractor on two Yosemite wastewater plants, including structural steel and precast buildings, plus deformation monitoring with a 0.005 ft (1/16″) reporting threshold.</p></article>
+      <article class="proj"><img src="../img/boat-lake.jpg" alt="Survey gear in the bow of a boat on a mountain lake at sunrise" loading="lazy"><div class="mono">High Sierra · Boundary &amp; drone</div><h3>Across an alpine lake</h3><p>Forty remote acres in the high Sierra, reached by boat. We recovered the original section corners, solved the boundary, flew a drone topo with a 1-inch orthophoto, set corners and filed a record of survey.</p></article>
+      <article class="proj"><img src="../img/catalina-gnss.jpg" alt="GNSS receiver on a pole high above Avalon harbor on Catalina Island, with the Pacific behind" loading="lazy" style="object-position:30% 70%"><div class="mono">Catalina Island to the Eastern Sierra</div><h3>Mountaintop communication sites</h3><p>Boundary, topography and records of survey for utility communication sites on peaks from Catalina Island to the Eastern Sierra, for a long-time engineering client.</p></article>
+      <article class="proj"><img src="../img/ranch-rock-wall.jpg" alt="Oak woodland pasture with an old rock wall running across green grass" loading="lazy"><div class="mono">Agricultural · ALTA/NSPS</div><h3>Large-acreage ALTAs</h3><p>ALTA surveys and records of survey on ranches and farms of 1,000 to 5,000+ acres for institutional agricultural investors, across California.</p></article>
+      <article class="proj"><img src="../img/total-station-trail.jpg" alt="Robotic total station set up on a trail beside a wooden fence and granite boulders" loading="lazy"><div class="mono">Yosemite National Park · Design &amp; layout</div><h3>Bridalveil Fall accessible trails</h3><p>All of the topographic surveying, mapping and construction layout for the Bridalveil Fall trails and overlooks.</p></article>
+      <article class="proj"><img src="../img/big-sur-gnss.jpg" alt="GNSS receiver on a tripod on a grassy ridge above the Big Sur backcountry, with the Pacific haze beyond" loading="lazy" style="object-position:30% 60%"><div class="mono">Monterey County · Boundary</div><h3>Big Sur backcountry</h3><p>The original 1882 government survey here was fraudulent. We tracked down the corners surveyors set to replace it in the early 1900s, redwood posts in rock mounds, tied them to GNSS control and filed a record of survey.</p></article>
+      <article class="proj"><img src="../img/section-corner-poster.jpg" alt="Yellow Forest Service location poster nailed to a tree, marking a section corner" loading="lazy"><div class="mono">Boundary · Retracement</div><h3>1,000-acre ranch, original corners</h3><p>Original 1800s government section corners recovered across a thousand acres, then intermediate points set along the property lines to guide new fencing.</p></article>
+      <article class="proj"><img src="../img/yosemite-domes.jpg" alt="Granite domes above a forested valley in Yosemite with survey equipment on rock in the foreground" loading="lazy"><div class="mono">Yosemite National Park · Federal boundary</div><h3>Park boundary surveys</h3><p>Federal boundary work along the Yosemite National Park line, retracing original section surveys and century-old park boundary posts to BLM Manual standards.</p></article>
+      <article class="proj"><img src="../img/stream-research-site.jpg" alt="Surveyor with a prism on a tripod in a mossy forest stream among research instruments" loading="lazy" style="object-position:50% 45%"><div class="mono">Science · Field sites</div><h3>Ecological observatory field sites</h3><p>Surveys at long-term ecological research sites from California to Oregon and Virginia, for a national science program.</p></article>
+      <article class="proj dark"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A04E" stroke-width="1.6" aria-hidden="true"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 006 0L7 7zM17 7l-3 7a3 3 0 006 0l-3-7zM8 21h8"/></svg><div class="mono">Legal · Expert witness</div><h3>Contentious boundary disputes</h3><p>Expert witness work on complicated boundary cases, where the history, the evidence and the math all have to hold up.</p></article>
+    </div>
+  </div>
 </section>
 
-<!-- CRAFT -->
-<section style="background: #0F1E36; color: #F3F2EE;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center;">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #9FB0C9; text-transform: uppercase;">The work</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">Archaeology. History. Math. <span style="color: #C9A04E;">Technology.</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #C7CFDC;">Surveying is all four at once, and some days it's a hike, a creek crossing or a boat ride, too. We enjoy that mix.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 28px; border-top: 1px solid #2C436B; padding-top: 26px;">
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 17px; font-weight: 750;">Archaeology</div><div style="font-size: 15px; line-height: 1.5; color: #C7CFDC;">Digging for stones, pipes and bearing trees set more than a century ago.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 17px; font-weight: 750;">History</div><div style="font-size: 15px; line-height: 1.5; color: #C7CFDC;">GLO field notes, old deeds, and decades of local survey records.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 17px; font-weight: 750;">Math</div><div style="font-size: 15px; line-height: 1.5; color: #C7CFDC;">Least-squares adjustments, proportioning and closures we can defend.</div></div>
-<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 17px; font-weight: 750;">Technology</div><div style="font-size: 15px; line-height: 1.5; color: #C7CFDC;">Leica scanners, robotic total stations, GNSS and drones.</div></div>
-</div>
-</div>
-<img src="../img/creek-total-station.jpg" alt="Surveyor standing in a shallow snowmelt creek beside a total station on a tripod" style="flex: 1 1 380px; max-width: 520px; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; min-width: 0;">
-</div>
+<section class="clients" aria-label="Clients">
+  <div class="w">
+    <div class="mono">Who we work for</div>
+    <div class="cgrid">
+      <div><b>Federal &amp; county agencies</b><span>National parks, counties and public utilities</span></div>
+      <div><b>National contractors</b><span>Heavy civil, treatment plants and underground</span></div>
+      <div><b>Institutional ag investors</b><span>Large-acreage ALTA surveys across California</span></div>
+      <div><b>Schools &amp; architects</b><span>Campus topography and design surveys for modernization</span></div>
+      <div><b>Engineers &amp; utilities</b><span>Communication sites, design surveys and scans</span></div>
+      <div><b>Landowners &amp; attorneys</b><span>Boundaries, ranches and expert witness work</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- BETTER NOT BIGGER -->
-<section id="about" style="background: #F3F2EE; color: #0F1E36;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap-reverse; gap: 64px; align-items: center;">
-<img src="../img/prism-riverbed.jpg" alt="Orange survey prism on a tripod above a granite riverbed under pines" style="flex: 1 1 380px; max-width: 520px; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; min-width: 0;">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #4A6290; text-transform: uppercase;">How we work</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">Better,<br>not bigger.</h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3B4A63;">Efficient and large aren't the same thing. On our jobs, a seasoned licensed land surveyor runs the field work, then runs the calculations and drafts the map. No hand-offs between crew, CAD tech and project manager, and nothing lost in between.</p>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3B4A63;">We'd rather grow better than bigger.</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid #C9CFD9; padding-top: 20px;">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A6290;">Licensed land surveyors · Oakhurst, California</span>
-<a href="#about" style="color: #0F1E36; font-size: 15px; font-weight: 700; text-underline-offset: 6px;">Meet the team</a>
-</div>
-</div>
-</div>
+<section class="how pad" id="about">
+  <div class="w">
+    <img src="../img/surveyor-on-lift.jpg" alt="Licensed surveyor in a hard hat and safety vest on a lift with a data collector, beside a new block-wall building" loading="lazy" style="object-position:50% 38%">
+    <div class="txt">
+      <div class="mono">How we work</div>
+      <h2 class="h2 cond">Better,<br>not bigger.</h2>
+      <p>Technology lets a small, senior team cover more ground without adding layers. A seasoned licensed land surveyor runs the field work, then runs the calculations and signs the deliverable. No hand-offs between crew, CAD tech and project manager, and nothing lost in between.</p>
+      <p>We'd rather grow better than bigger.</p>
+      <div class="row"><span>Licensed land surveyors · Working across California</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- HERITAGE -->
-<section style="background: #14294B; color: #F3F2EE;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-direction: column; gap: 48px;">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #9FB0C9; text-transform: uppercase;">The records we hold</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase;">The ground truth.</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; align-items: stretch;">
-<figure style="margin: 0; background: #0F1E36; border: 1px solid #2C436B; display: flex; flex-direction: column;">
-<img src="../img/ls4298-cap.jpg" alt="Aluminum Forest Service cadastral survey cap stamped L.S. 4298, 1987" style="width: 100%; aspect-ratio: 7 / 8; object-fit: cover; display: block;">
-<figcaption style="padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 18px; font-weight: 750;">L.S. 4298, still holding</span><span style="font-size: 15px; line-height: 1.55; color: #C7CFDC;">Stephen Jones of Jones &amp; Snyder Surveying set this Forest Service cadastral corner in 1987. Corners like it, and the notes behind them, are why the old records still matter.</span></figcaption>
-</figure>
-<figure style="margin: 0; background: #0F1E36; border: 1px solid #2C436B; display: flex; flex-direction: column;">
-<div style="padding: 12px; flex-grow: 1; display: flex; align-items: center;"><img src="../img/job-heatmap.png" alt="Heat map of job locations across California, brightest around Oakhurst, with points from Redding to San Diego" style="width: 100%; height: auto; display: block;"></div>
-<figcaption style="padding: 10px 22px 24px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 18px; font-weight: 750;">14,800+ jobs on file</span><span style="font-size: 15px; line-height: 1.55; color: #C7CFDC;">Each point is a job in the records we hold. Most are close to home; hundreds more reach from Redding to San Diego. Decades of field notes and found monuments mean faster research and fewer surprises.</span></figcaption>
-</figure>
-<div style="background: #F3F2EE; color: #0F1E36; padding: 32px 30px; display: flex; flex-direction: column; gap: 18px; justify-content: flex-end;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A6A24;">An old library, a new company</div>
-<div style="font-size: 30px; font-weight: 800; font-stretch: 72%; line-height: 1; text-transform: uppercase;">Old records. Our own work.</div>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">We hold the survey records of Jones &amp; Snyder Surveying, the firm that worked here before us.</p>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3B4A63;">Every new survey is our own work, under our own contract. Maps from the older files are available as copies of record.</p>
-<a href="#contact" style="color: #0F1E36; font-size: 15px; font-weight: 700; text-underline-offset: 6px;">Request a copy of record</a>
-</div>
-</div>
-</div>
+<section class="caps" aria-label="Monuments found in the field">
+  <img src="../img/cadastral-cap.jpg" alt="Weathered Bureau of Land Management cadastral survey cap among leaves and rocks" loading="lazy">
+  <img src="../img/iron-pipe-redwood.jpg" alt="Old rusted iron pipe monument flagged in pink, among redwood needles and rocks" loading="lazy" style="object-position:50% 40%">
+  <img src="../img/yosemite-boundary-1905.jpg" alt="Bronze cap stamped Yosemite National Park Boundary, U.S. Forest Reserve, Post No. 21, 1905" loading="lazy" style="object-position:50% 52%">
 </section>
 
-<!-- YOSEMITE -->
-<section style="position: relative; min-height: 620px; color: #F3F2EE; display: flex; align-items: center;">
-<img src="../img/yosemite-domes.jpg" alt="Granite domes above a forested valley in Yosemite with survey equipment on rock in the foreground" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
-<div style="position: absolute; inset: 0; background: rgba(11, 22, 40, 0.62);"></div>
-<div style="position: relative; width: 100%; max-width: 1240px; margin: 0 auto; padding: 96px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px;">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.12em; color: #D6DDE8; text-transform: uppercase;">Yosemite's South Entrance · Working statewide</div>
-<h2 class="h2" style="margin: 0; font-size: 64px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase; max-width: 820px;">We love the outdoors. <span style="color: #C9A04E;">We work in it.</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #E3E7EE; max-width: 640px;">Our office is in Oakhurst, at the South Entrance to Yosemite National Park, and we've surveyed some of its best-known places. The work also takes us across California, from Sacramento Valley farmland to the high Sierra and Catalina Island.</p>
-</div>
+<section class="rec pad" id="records">
+  <div class="w">
+    <div class="head" style="margin-bottom:0">
+      <div class="mono k">The records we hold</div>
+      <h2 class="h2 cond">The ground truth.</h2>
+    </div>
+    <div class="rgrid">
+      <figure class="rcard"><img src="../img/ls4298-cap.jpg" alt="Aluminum Forest Service cadastral survey cap stamped L.S. 4298, 1987" style="width:100%;aspect-ratio:7/8;object-fit:cover"><figcaption><b>L.S. 4298, still holding</b><span>Stephen Jones of Jones &amp; Snyder Surveying set this Forest Service cadastral corner in 1987. Corners like it, and the notes behind them, are why the old records still matter.</span></figcaption></figure>
+      <figure class="rcard"><div style="padding:12px;flex-grow:1;display:flex;align-items:center"><img src="../img/job-heatmap.png" alt="Heat map of job locations across California, brightest around Oakhurst, with points from Redding to San Diego" style="width:100%;height:auto"></div><figcaption><b>14,800+ jobs on file</b><span>Each point is a job in the records we hold. Most are close to home; hundreds more reach from Redding to San Diego. Decades of field notes and found monuments mean faster research and fewer surprises.</span></figcaption></figure>
+      <div class="rlight">
+        <div class="mono">Recorded maps</div>
+        <div class="t cond">Need a recorded map?</div>
+        <p>We keep a large library of recorded maps and records of survey for the foothills and the Sierra, and we're happy to pull and print them.</p>
+        <p>Realtors, title officers and landowners call us for this all the time. Just send the address or parcel number.</p>
+        <a href="mailto:nick@jssurveying.com?subject=Recorded%20map%20request">Request a recorded map</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
-<section id="contact" style="background: #C9A04E; color: #0F1E36;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
-<h2 style="margin: 0; font-size: 56px; line-height: 0.95; font-weight: 800; font-stretch: 72%; text-transform: uppercase; max-width: 700px;">Let's talk about your project.</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 14px;">
-<a href="#contact" style="background: #0F1E36; color: #F3F2EE; text-decoration: none; font-size: 15px; font-weight: 700; font-stretch: 88%; letter-spacing: 0.12em; text-transform: uppercase; padding: 0 26px; min-height: 54px; display: inline-flex; align-items: center;">Request a Quote</a>
-<a href="tel:5596837661" style="border: 1.5px solid #0F1E36; color: #0F1E36; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 500; padding: 0 26px; min-height: 54px; display: inline-flex; align-items: center;">559.683.7661</a>
-</div>
-</div>
+<section class="yos" aria-label="Yosemite">
+  <img src="../img/prism-riverbed.jpg" alt="Orange survey prism on a tripod above a granite riverbed under pines in Yosemite" loading="lazy" style="object-position:50% 45%">
+  <div class="shade"></div>
+  <div class="w in">
+    <div class="mono">Yosemite's South Entrance · Working statewide</div>
+    <h2 class="h2 cond">We still love Yosemite. <span>We still work in it.</span></h2>
+    <p>Our office is in Oakhurst, at the South Entrance to Yosemite National Park, and we've surveyed some of its best-known places. The work also takes us across California, from Sacramento Valley farmland to the high Sierra and Catalina Island.</p>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background: #0F1E36; color: #C7CFDC;">
-<div style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 40px; display: flex; flex-direction: column; gap: 40px;">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-<img src="jsa-logo.svg" alt="Jones Snyder &amp; Associates" style="height: 72px; width: auto; display: block; align-self: flex-start;">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; flex: 0 1 640px; font-size: 15px; line-height: 1.7;">
-<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #C9A04E; margin-bottom: 8px;">OFFICE</div>40315 Junction Drive, Suite H<br>Oakhurst, CA 93644<br>South Entrance to Yosemite</div>
-<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #C9A04E; margin-bottom: 8px;">CONTACT</div><a href="tel:5596837661" style="color: #E9ECF2; text-decoration: none;">559.683.7661</a><br><a href="#contact" style="color: #E9ECF2;">Request a quote</a></div>
-<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #C9A04E; margin-bottom: 8px;">LICENSED</div>[Name], PLS [0000]<br>Licensed land surveyor in responsible charge</div>
-<div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #C9A04E; margin-bottom: 8px;">SERVICE AREA</div>Statewide across California. Home base: Madera, Mariposa, Fresno &amp; Merced counties and Yosemite.</div>
-</div>
-</div>
-<div style="border-top: 1px solid #23385C; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: #8E9DB6;">
-<span>© 2026 Jones Snyder &amp; Associates, a dba of Terrane Geomatics, Inc. Construction, monitoring and mapping work: <a href="/">Terrane Geomatics</a>.</span>
-<span style="font-family: 'IBM Plex Mono', monospace;">37°20′04″N 119°39′24″W</span>
-</div>
-</div>
+<section class="cta" id="contact">
+  <div class="w">
+    <h2 class="cond">Let's talk about your project.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a class="btn btn-navy" href="mailto:nick@jssurveying.com?subject=Project%20inquiry">Request a Quote</a>
+      <a class="btn btn-out" href="tel:5596837661">559.683.7661</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="ftop">
+      <a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><span class="jsa-lockup"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"><span class="jsa-endorse">A Terrane Geomatics company</span><em class="tagline">Land surveying &amp; mapping services</em></span>
+      </a>
+      <div class="fcols">
+        <div><div class="mono">Office</div>40315 Junction Drive, Suite H<br>Oakhurst, CA 93644<br>South Entrance to Yosemite</div>
+        <div><div class="mono">Contact</div><a href="tel:5596837661">559.683.7661</a><br><a href="mailto:nick@jssurveying.com">nick@jssurveying.com</a></div>
+        <div><div class="mono">Service area</div>Statewide across California. Home base: Madera, Mariposa, Fresno &amp; Merced counties and Yosemite.</div>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 Jones Snyder &amp; Associates, a dba of Terrane Geomatics, Inc.</span>
+      <span class="mono">37°20′04″N 119°39′24″W</span>
+    </div>
+  </div>
 </footer>
 
-</div>
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var P=new Uint8Array(512);(function(){var p=[],i,j,t,s=11;for(i=0;i<256;i++)p[i]=i;for(i=255;i>0;i--){s=(s*16807)%2147483647;j=s%(i+1);t=p[i];p[i]=p[j];p[j]=t;}for(i=0;i<512;i++)P[i]=p[i&255];})();
+  function f(t){return t*t*(3-2*t)}
+  function h(x,y){return P[P[x&255]+(y&255)]/255}
+  function n(x,y){var xi=Math.floor(x),yi=Math.floor(y),u=f(x-xi),v=f(y-yi),a=h(xi,yi),b=h(xi+1,yi),c=h(xi,yi+1),d=h(xi+1,yi+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v;}
+  function fbm(x,y){var s=0,a=.5,q=1;for(var o=0;o<5;o++){s+=a*n(x*q,y*q);q*=2.03;a*=.5;}return s;}
+  function ht(x,z){var dome=Math.exp(-Math.pow((x-.15)/.42,2)-Math.pow((z-.62)/.28,2));var dome2=Math.exp(-Math.pow((x+.55)/.3,2)-Math.pow((z-.8)/.2,2))*.6;var r=1-Math.abs(fbm(x*1.6+2,z*1.8+5)*2-1);return .1*fbm(x*2.4,z*2.4)+.18*r*r+.75*dome+.5*dome2;}
+
+  var cv=document.getElementById('cloud');if(!cv)return;
+  var ctx=cv.getContext('2d'),pct=document.getElementById('pct'),ptsEl=document.getElementById('pts');
+  var W,H,pts=[],raf,visible=false;
+  function build(){pts=[];var NX=110,NZ=80;for(var j=0;j<NZ;j++){var z=j/(NZ-1);for(var i=0;i<NX;i++){var x=-1.2+2.4*i/(NX-1);pts.push([x,z,ht(x,z)]);}}}
+  function size(){var d=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);}
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    var sweep=reduce?1.1:((t*0.00009)%1.35)-0.1, rot=reduce?0.5:0.5+Math.sin(t*0.00012)*0.35;
+    var cs=Math.cos(rot),sn=Math.sin(rot),cx=W*0.47,cy=H*0.6,sc=W*0.5,shown=0;
+    for(var k=0;k<pts.length;k++){
+      var p=pts[k];if(p[1]>sweep)continue;shown++;
+      var x=p[0],z=p[1]-0.5,y=p[2];
+      var xr=x*cs-z*sn, zr=x*sn+z*cs;
+      var per=1/(1.55-zr*0.55);
+      var sx=cx+xr*sc*per, sy=cy+(-zr*0.62-y*0.78+0.32)*sc*per;
+      var near=0.5-zr, d=sweep-p[1];
+      if(d<0.03){ctx.fillStyle='rgba(226,190,115,'+(1-d*20)+')';ctx.fillRect(sx-1.3,sy-1.3,2.6,2.6);}
+      else{var a=0.22+Math.max(0,Math.min(1,near))*0.5, l=Math.min(1,y*1.3);
+        ctx.fillStyle='rgba('+Math.round(150+75*l)+','+Math.round(162+28*l)+','+Math.round(190-75*l)+','+a+')';ctx.fillRect(sx-.8,sy-.8,1.6,1.6);}
+    }
+    if(pct){var v=Math.round(Math.max(0,Math.min(1,sweep))*100);pct.textContent=('00'+v).slice(-3)+'%';}
+    if(ptsEl)ptsEl.textContent=shown.toLocaleString();
+  }
+  function loop(t){draw(t);raf=requestAnimationFrame(loop);}
+  build();size();
+  addEventListener('resize',function(){size();if(reduce)draw(0);});
+  if(reduce){draw(0);return;}
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;cancelAnimationFrame(raf);if(visible)raf=requestAnimationFrame(loop);});}).observe(cv);}
+  else raf=requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
