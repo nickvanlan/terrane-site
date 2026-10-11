@@ -112,11 +112,6 @@ header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);posi
 .cloud .lbl{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mist);background:rgba(11,22,40,.75);border:1px solid var(--navy-line-2);padding:6px 9px}
 .cloud .lbl b{color:var(--gold);font-weight:500}
 
-.notes{margin:0;border:1px solid var(--navy-line-2);background:#F3F2EE}
-.notes img{width:100%;aspect-ratio:947/420;object-fit:cover;object-position:50% 40%;filter:sepia(.25) contrast(1.05)}
-.notes figcaption{background:var(--navy);padding:12px 14px;font-size:14px;line-height:1.5;color:var(--mist)}
-.notes figcaption .mono{font-size:11px;color:var(--gold);margin-right:6px}
-.notes figcaption .mono:nth-of-type(2){margin-left:8px}
 /* projects */
 .proj-sec{background:var(--white)}
 .projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:40px 28px}
@@ -307,7 +302,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
         </div>
       </article>
       <article class="svc">
-        <img src="img/cadastral-cap.jpg" alt="Weathered Bureau of Land Management cadastral survey cap among leaves and rocks" loading="lazy">
+        <img src="img/glo-notes-1880.jpg" alt="Handwritten original government survey field notes dated March 22, 1880" loading="lazy" style="object-position:50% 35%">
         <div class="body">
           <div class="tag">Boundary <em>Still our favorite</em></div>
           <h3>Boundary &amp; ALTA surveys</h3>
@@ -340,10 +335,6 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
         <div><b>Math</b><span>Least-squares adjustments, proportioning and closures we can defend.</span></div>
         <div class="t"><b>Technology</b><span>3D laser scanners, drone LiDAR, robotic total stations and GNSS, turned into models clients can use.</span></div>
       </div>
-      <figure class="notes">
-        <img src="img/glo-notes-1880.jpg" alt="Handwritten General Land Office field notes dated March 22, 1880, describing a random line between sections 10 and 15" loading="lazy">
-        <figcaption><span class="mono">Then</span> Original field notes for a Yosemite-area township, March 22, 1880. <span class="mono">Now</span> Mountain ground like it, captured in 3D.</figcaption>
-      </figure>
     </div>
     <div class="cloud" aria-label="Animated point cloud of a mountain scan">
       <canvas id="cloud"></canvas>
