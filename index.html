@@ -114,6 +114,17 @@ header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);posi
 
 .caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--navy)}
 .caps img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.story{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:56px}
+.story-txt{display:flex;flex-direction:column;gap:18px}
+.story-txt .mono{color:var(--steel)}
+.story-txt p{font-size:19px;line-height:1.6;color:var(--ink-2);max-width:620px}
+.story-card{background:var(--navy);color:var(--paper);padding:32px 30px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+.story-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(201,160,78,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,78,.08) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.story-card .yr{position:relative;font-size:96px;font-weight:800;font-stretch:72%;line-height:.85;color:var(--gold)}
+.story-card p{position:relative;font-size:17px;line-height:1.6;color:var(--mist)}
+.story-card .mono{position:relative;font-size:11.5px;color:var(--gold);border-top:1px solid var(--navy-line-2);padding-top:14px}
+.lead-in{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin:0 0 22px;padding-top:22px;border-top:1px solid var(--rule-2)}
+@media (max-width:900px){.story{grid-template-columns:1fr;gap:32px}.story-card .yr{font-size:76px}}
 /* projects */
 .proj-sec{background:var(--white)}
 .projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:40px 28px}
@@ -261,11 +272,20 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
 
 <section class="svc-sec pad" id="services">
   <div class="w">
-    <div class="head">
-      <div class="mono">What we do</div>
-      <h2 class="h2 cond">From 1800s stones to millimeter scans.</h2>
-      <p>The surveyors before us measured this ground with chains and transits, and their work still holds. Today we use GNSS, drones and precision total stations, but the fundamentals remain the same, and our respect for that work is unwavering. LiDAR recently helped us match the terrain described in the original field notes and recover a section corner no one had seen since 1870.</p>
+    <div class="story">
+      <div class="story-txt">
+        <div class="mono">Archaeology meets high tech</div>
+        <h2 class="h2 cond">Old notes.<br>New eyes.</h2>
+        <p>The surveyors before us measured this ground with chains and transits, across terrain that's hard going even with modern gear. Their work still holds, and our respect for it is unwavering.</p>
+        <p>Today we carry GNSS, drones and precision total stations. The tools are new; the fundamentals aren't. We still read the old notes, follow the evidence and dig where it points. The technology just helps us see where to look.</p>
+      </div>
+      <aside class="story-card">
+        <div class="yr">1870</div>
+        <p>The original field notes described the ground along a section line. We matched those calls to a LiDAR model of the terrain, narrowed the search, and recovered a section corner no one had seen since 1870.</p>
+        <div class="mono">Old notes + LiDAR = found corner</div>
+      </aside>
     </div>
+    <p class="lead-in">That mix of history and technology runs through everything we do.</p>
     <div class="svcs">
       <article class="svc new">
         <img src="img/drone-orchard.jpg" alt="Survey drone on an orange landing pad beside an orchard" loading="lazy">
