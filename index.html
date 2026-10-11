@@ -92,7 +92,6 @@ header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);posi
 .svc h3{font-size:30px;font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:1}
 .svc p{font-size:16px;line-height:1.6;color:var(--ink-2)}
 .svc .spec{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:12.5px;color:var(--ink)}
-.svc.new .tag::after{content:"Expanded";color:var(--navy);background:var(--gold);padding:1px 7px;font-size:10.5px;letter-spacing:.12em}
 @media (max-width:980px){.svcs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.svcs{grid-template-columns:1fr}}
 
@@ -114,17 +113,13 @@ header.site{background:var(--navy);border-bottom:1px solid var(--navy-line);posi
 
 .caps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--navy)}
 .caps img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.story{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:56px}
-.story-txt{display:flex;flex-direction:column;gap:18px}
-.story-txt .mono{color:var(--steel)}
-.story-txt p{font-size:19px;line-height:1.6;color:var(--ink-2);max-width:620px}
-.story-card{background:var(--navy);color:var(--paper);padding:32px 30px;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
-.story-card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(201,160,78,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(201,160,78,.08) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.story-card .yr{position:relative;font-size:96px;font-weight:800;font-stretch:72%;line-height:.85;color:var(--gold)}
-.story-card p{position:relative;font-size:17px;line-height:1.6;color:var(--mist)}
-.story-card .mono{position:relative;font-size:11.5px;color:var(--gold);border-top:1px solid var(--navy-line-2);padding-top:14px}
-.lead-in{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin:0 0 22px;padding-top:22px;border-top:1px solid var(--rule-2)}
-@media (max-width:900px){.story{grid-template-columns:1fr;gap:32px}.story-card .yr{font-size:76px}}
+.tech .side{flex:1 1 380px;max-width:540px;width:100%;min-width:0;display:flex;flex-direction:column}
+.tech .side .cloud{max-width:none;flex:none}
+.story-card{background:var(--navy-2);border:1px solid var(--navy-line-2);border-top:none;color:var(--paper);padding:26px 26px 24px;display:flex;flex-direction:column;gap:14px}
+.story-card .yr{font-size:84px;font-weight:800;font-stretch:72%;line-height:.85;color:var(--gold)}
+.story-card p{font-size:16px;line-height:1.6;color:var(--mist)}
+.story-card .mono{font-size:11.5px;color:var(--gold);border-top:1px solid var(--navy-line-2);padding-top:12px}
+.tech .txt p.lead + p.lead{margin-top:-10px}
 /* projects */
 .proj-sec{background:var(--white)}
 .projs{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:40px 28px}
@@ -224,8 +219,8 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
       <span class="name"><b>TERRANE</b><small>Geomatics</small></span>
     </a>
     <nav class="nav" aria-label="Main">
+      <a href="#approach">Approach</a>
       <a href="#services">Services</a>
-      <a href="#technology">Technology</a>
       <a href="#projects">Projects</a>
       <a href="#records">Records</a>
     </nav>
@@ -270,29 +265,49 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
   </div>
 </section>
 
-<section class="svc-sec pad" id="services">
+<section class="tech pad" id="approach">
   <div class="w">
-    <div class="story">
-      <div class="story-txt">
-        <div class="mono">Archaeology meets high tech</div>
-        <h2 class="h2 cond">Old notes.<br>New eyes.</h2>
-        <p>The surveyors before us measured this ground with chains and transits, across terrain that's hard going even with modern gear. Their work still holds, and our respect for it is unwavering.</p>
-        <p>Today we carry GNSS, drones and precision total stations. The tools are new; the fundamentals aren't. We still read the old notes, follow the evidence and dig where it points. The technology helps us focus where it counts.</p>
+    <div class="txt">
+      <div class="mono">Archaeology meets high tech</div>
+      <h2 class="h2 cond">Old notes.<br><span>New eyes.</span></h2>
+      <p class="lead">The surveyors before us measured this ground with chains and transits, across terrain that's hard going even with modern gear. Their work still holds, and our respect for it is unwavering.</p>
+      <p class="lead">Today we carry GNSS, drones and precision total stations. The tools are new; the fundamentals aren't. We still read the old notes, follow the evidence and dig where it points. The technology helps us focus where it counts.</p>
+      <div class="quad">
+        <div><b>Archaeology</b><span>Digging for stones, pipes and bearing trees set more than a century ago.</span></div>
+        <div><b>History</b><span>Original government field notes, old deeds and decades of local survey records.</span></div>
+        <div><b>Math</b><span>Least-squares adjustments, proportioning and closures we can defend.</span></div>
+        <div class="t"><b>Technology</b><span>GNSS, drones, laser scanners and precision total stations, turned into models clients can use.</span></div>
       </div>
+    </div>
+    <div class="side">
+      <div class="cloud" aria-label="Animated point cloud of a mountain scan">
+      <canvas id="cloud"></canvas>
+      <span class="lbl" style="left:14px;top:14px">SCAN <b id="pct">000%</b></span>
+      <span class="lbl" style="right:14px;bottom:14px">PTS <b id="pts">0</b></span>
+    </div>
       <aside class="story-card">
         <div class="yr">1870</div>
         <p>The original field notes described the ground along a section line. We matched those calls to a LiDAR model of the terrain, narrowed the search, and recovered a section corner no one had seen since 1870.</p>
         <div class="mono">Old notes + LiDAR = found corner</div>
       </aside>
     </div>
-    <p class="lead-in">That mix of history and technology runs through everything we do.</p>
+  </div>
+</section>
+
+<section class="svc-sec pad" id="services">
+  <div class="w">
+    <div class="head">
+      <div class="mono">What we do</div>
+      <h2 class="h2 cond">From 1800s stones to millimeter scans.</h2>
+      <p>That mix of history and technology runs through everything we do, from a single corner to a year of monitoring on a heavy civil job.</p>
+    </div>
     <div class="svcs">
-      <article class="svc new">
+      <article class="svc">
         <img src="img/drone-orchard.jpg" alt="Survey drone on an orange landing pad beside an orchard" loading="lazy">
         <div class="body">
           <div class="tag">Reality capture</div>
           <h3>Drone &amp; laser scanning</h3>
-          <p>Drone LiDAR and photogrammetry, 3D laser scanning, orthophotos and 3D surfaces, all tied to real survey control.</p>
+          <p>Drone LiDAR and photogrammetry, laser scanning, orthophotos and 3D surfaces, all tied to real survey control.</p>
           <div class="spec">Point clouds · Orthos · Volumes · As-builts</div>
         </div>
       </article>
@@ -305,7 +320,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
           <div class="spec">Held to &lt; 0.01 ft</div>
         </div>
       </article>
-      <article class="svc new">
+      <article class="svc">
         <img src="img/treatment-plant.jpg" alt="Precast treatment plant building under construction with a crane in the Merced River canyon" loading="lazy">
         <div class="body">
           <div class="tag">Heavy civil</div>
@@ -314,7 +329,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
           <div class="spec">0.005 ft reporting threshold</div>
         </div>
       </article>
-      <article class="svc new">
+      <article class="svc">
         <img src="img/decline-tunnel.jpg" alt="Underground decline tunnel with a drill jumbo working at the lit heading" loading="lazy">
         <div class="body">
           <div class="tag">Underground</div>
@@ -345,26 +360,6 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
   </div>
 </section>
 
-<section class="tech pad" id="technology">
-  <div class="w">
-    <div class="txt">
-      <div class="mono">The work, evolved</div>
-      <h2 class="h2 cond">Archaeology. History. Math. <span>Technology.</span></h2>
-      <p class="lead">Surveying has always been all four at once. What's changed is how much ground the technology now covers in a day, and how much more a client can see in what we hand back.</p>
-      <div class="quad">
-        <div><b>Archaeology</b><span>Digging for stones, pipes and bearing trees set more than a century ago.</span></div>
-        <div><b>History</b><span>Original government field notes, old deeds, and decades of local survey records.</span></div>
-        <div><b>Math</b><span>Least-squares adjustments, proportioning and closures we can defend.</span></div>
-        <div class="t"><b>Technology</b><span>3D laser scanners, drone LiDAR, robotic total stations and GNSS, turned into models clients can use.</span></div>
-      </div>
-    </div>
-    <div class="cloud" aria-label="Animated point cloud of a mountain scan">
-      <canvas id="cloud"></canvas>
-      <span class="lbl" style="left:14px;top:14px">SCAN <b id="pct">000%</b></span>
-      <span class="lbl" style="right:14px;bottom:14px">PTS <b id="pts">0</b></span>
-    </div>
-  </div>
-</section>
 
 <section class="proj-sec pad" id="projects">
   <div class="w">
@@ -380,7 +375,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
       <article class="proj"><img src="img/catalina-gnss.jpg" alt="GNSS receiver on a pole high above Avalon harbor on Catalina Island, with the Pacific behind" loading="lazy" style="object-position:30% 70%"><div class="mono">Catalina Island to the Eastern Sierra</div><h3>Mountaintop communication sites</h3><p>Boundary, topography and records of survey for utility communication sites on peaks from Catalina Island to the Eastern Sierra, for a long-time engineering client.</p></article>
       <article class="proj"><img src="img/ranch-rock-wall.jpg" alt="Oak woodland pasture with an old rock wall running across green grass" loading="lazy"><div class="mono">Agricultural · ALTA/NSPS</div><h3>Large-acreage ALTAs</h3><p>ALTA surveys and records of survey on ranches and farms of 1,000 to 5,000+ acres for institutional agricultural investors, across California.</p></article>
       <article class="proj"><img src="img/total-station-trail.jpg" alt="Robotic total station set up on a trail beside a wooden fence and granite boulders" loading="lazy"><div class="mono">Yosemite National Park · Design &amp; layout</div><h3>Bridalveil Fall accessible trails</h3><p>All of the topographic surveying, mapping and construction layout for the Bridalveil Fall trails and overlooks.</p></article>
-      <article class="proj"><img src="img/big-sur-gnss.jpg" alt="GNSS receiver on a tripod on a grassy ridge above the Big Sur backcountry, with the Pacific haze beyond" loading="lazy" style="object-position:30% 60%"><div class="mono">Monterey County · Boundary</div><h3>Big Sur backcountry</h3><p>The original 1882 government survey here was fraudulent. We tracked down the corners surveyors set to replace it in the early 1900s, redwood posts in rock mounds, tied them to GPS control and filed a record of survey.</p></article>
+      <article class="proj"><img src="img/big-sur-gnss.jpg" alt="GNSS receiver on a tripod on a grassy ridge above the Big Sur backcountry, with the Pacific haze beyond" loading="lazy" style="object-position:30% 60%"><div class="mono">Monterey County · Boundary</div><h3>Big Sur backcountry</h3><p>The original 1882 government survey here was fraudulent. We tracked down the corners surveyors set to replace it in the early 1900s, redwood posts in rock mounds, tied them to GNSS control and filed a record of survey.</p></article>
       <article class="proj"><img src="img/section-corner-poster.jpg" alt="Yellow Forest Service location poster nailed to a tree, marking a section corner" loading="lazy"><div class="mono">Boundary · Retracement</div><h3>1,000-acre ranch, original corners</h3><p>Original 1800s government section corners recovered across a thousand acres, then intermediate points set along the property lines to guide new fencing.</p></article>
       <article class="proj"><img src="img/yosemite-domes.jpg" alt="Granite domes above a forested valley in Yosemite with survey equipment on rock in the foreground" loading="lazy"><div class="mono">Yosemite National Park · Federal boundary</div><h3>Park boundary surveys</h3><p>Federal boundary work along the Yosemite National Park line, retracing original section surveys and century-old park boundary posts to BLM Manual standards.</p></article>
       <article class="proj"><img src="img/stream-research-site.jpg" alt="Surveyor with a prism on a tripod in a mossy forest stream among research instruments" loading="lazy" style="object-position:50% 45%"><div class="mono">Science · Field sites</div><h3>Ecological observatory field sites</h3><p>Surveys at long-term ecological research sites from California to Oregon and Virginia, for a national science program.</p></article>
