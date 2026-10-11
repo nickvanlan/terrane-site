@@ -207,14 +207,22 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
 .jsa-endorse{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#9FB0C9;line-height:1}
 .jsa-lockup .tagline{margin-top:4px}
 @media (max-width:420px){.jsa-logo{height:36px}.jsa-endorse{font-size:8.5px}}
+.jsa-lockup > .brand{display:block;align-self:flex-start}
+.jsa-logo{align-self:flex-start}
+.endorse-link{text-decoration:none;align-self:flex-start;padding:6px 0;margin:-6px 0;transition:color .2s}
+.endorse-link .arr{opacity:0;transition:opacity .2s}
+.endorse-link:hover,.endorse-link:focus-visible{color:var(--gold)}
+.endorse-link:hover .arr,.endorse-link:focus-visible .arr{opacity:1}
+@media (hover:none){.endorse-link .arr{opacity:.7}}
+.legal-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(201,160,78,.5);text-underline-offset:3px}
+.legal-link:hover{color:var(--gold-hi)}
 </style>
 </head>
 <body>
 
 <header class="site" id="top">
   <div class="w bar">
-    <a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><span class="jsa-lockup"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"><span class="jsa-endorse">A Terrane Geomatics company</span></span>
-    </a>
+    <div class="jsa-lockup"><a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"></a><a class="jsa-endorse endorse-link" href="/terrane/">A Terrane Geomatics company<span class="arr" aria-hidden="true"> →</span></a></div>
     <nav class="nav" aria-label="Main">
       <a href="#approach">Approach</a>
       <a href="#services">Services</a>
@@ -458,8 +466,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
 <footer>
   <div class="w">
     <div class="ftop">
-      <a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><span class="jsa-lockup"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"><span class="jsa-endorse">A Terrane Geomatics company</span><em class="tagline">Land surveying &amp; mapping services</em></span>
-      </a>
+      <div class="jsa-lockup"><a class="brand" href="#top" aria-label="Jones Snyder &amp; Associates home"><img class="jsa-logo" src="jsa-logo.svg" alt="Jones Snyder &amp; Associates"></a><a class="jsa-endorse endorse-link" href="/terrane/">A Terrane Geomatics company<span class="arr" aria-hidden="true"> →</span></a><em class="tagline">Land surveying &amp; mapping services</em></div>
       <div class="fcols">
         <div><div class="mono">Office</div>40315 Junction Drive, Suite H<br>Oakhurst, CA 93644<br>South Entrance to Yosemite</div>
         <div><div class="mono">Contact</div><a href="tel:5596837661">559.683.7661</a><br><a href="mailto:nick@jssurveying.com">nick@jssurveying.com</a></div>
@@ -467,7 +474,7 @@ footer .w{padding-top:64px;padding-bottom:40px;display:flex;flex-direction:colum
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 Jones Snyder &amp; Associates, a dba of Terrane Geomatics, Inc.</span>
+      <span>© 2026 Jones Snyder &amp; Associates, a dba of <a class="legal-link" href="/terrane/">Terrane Geomatics, Inc.</a></span>
       <span class="mono">37°20′04″N 119°39′24″W</span>
     </div>
   </div>
